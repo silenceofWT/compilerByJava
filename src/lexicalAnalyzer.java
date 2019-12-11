@@ -18,7 +18,7 @@ public class lexicalAnalyzer {//词法分析器
     /*
     *词法分析器
     *
-    *999
+    *
     */
     public void CharToToken(List<String> text){//将字符数组扫描成Token
         fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空之前的内容
