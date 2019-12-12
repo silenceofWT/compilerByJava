@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="语法分析器">
+    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/META-INF/compilerByJava.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileParseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileParseUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +42,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="55" column="73" selection-start-line="55" selection-start-column="73" selection-end-line="55" selection-end-column="73" />
+            <state relative-caret-position="1400">
+              <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
               <folding>
                 <element signature="e#123#150#0" expanded="true" />
-                <element signature="e#2946#2947#0" expanded="true" />
+                <element signature="e#2996#2997#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -220,7 +216,7 @@
       <updated>1575819288947</updated>
       <workItem from="1575819290889" duration="1987000" />
       <workItem from="1575872299607" duration="11660000" />
-      <workItem from="1576067793569" duration="776000" />
+      <workItem from="1576067793569" duration="1000000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -236,11 +232,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575883363296</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="算术表达式语法分析器，基本完成">
+      <created>1576068740832</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576068740833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="776000" />
+    <option name="totallyTimeSpent" value="1000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -317,7 +320,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="11" />
     <MESSAGE value="词法分析器完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="词法分析器完成" />
+    <MESSAGE value="算术表达式语法分析器，基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="算术表达式语法分析器，基本完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575880333778">
@@ -384,11 +388,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="55" column="73" selection-start-line="55" selection-start-column="73" selection-end-line="55" selection-end-column="73" />
+        <state relative-caret-position="1400">
+          <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
           <folding>
             <element signature="e#123#150#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#2996#2997#0" expanded="true" />
           </folding>
         </state>
       </provider>

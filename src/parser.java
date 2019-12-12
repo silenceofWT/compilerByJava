@@ -42,7 +42,7 @@ public class parser {//进行语法和语义的分析
         iniTable();
         int tag = 0;
         while (!sq.empty()) {
-            if (sq.peek().equals("E") || sq.peek().equals("X") || sq.peek().equals("T") || sq.peek().equals("Y") || sq.peek().equals("F")) //非终结符号
+            if (Vn.contains(sq.peek()) ) //非终结符号
             {
                 String a = sq.peek();
                 System.out.println(sq.peek());
@@ -53,10 +53,14 @@ public class parser {//进行语法和语义的分析
                     System.out.println(sq.peek() + "出栈");
                     sq.pop();
                     System.out.println(table.get(a).get(b));
-                    String[] temp = table.get(a).get(b).split("<|>");//按照<>拆开--------有点小问题
-                    for (int t = temp.length - 1; t > 0; t -= 2) {//这个-2就是因为上面的小问题，两个字中间会多一个不知道什么玩意
-                        System.out.println(temp[t] + " 入栈");
-                        sq.push(temp[t]);
+                    String[] temp = table.get(a).get(b).split("<|>");//按照<>拆开
+                    for (int t = temp.length - 1; t > 0; t--)
+                    {
+                        if(temp[t].length()!=0)//去除空字符串
+                        {
+                            System.out.println(temp[t]+" 入栈");
+                            sq.push(temp[t]);
+                        }
                     }
                 } else {
                     System.out.println("没有可以匹配的规则，不能识别！出错！");
@@ -76,6 +80,20 @@ public class parser {//进行语法和语义的分析
         }
         System.out.println("匹配成功");
     }
+
+    public static List<String> change(String token_in)//拆开token
+    {
+        List<String> rep=new ArrayList<>();
+        String t[]=token_in.split("\\{|}|,");
+        for(int m=0;m<t.length;m++)
+        {
+            if(t[m].length()!=0) {
+                rep.add(t[m]);
+            }
+        }
+        return rep;
+    }
+
     public static void main(String[] args) {
         System.out.println("parser");
     }
