@@ -1,6 +1,3 @@
 int main(){
-   int a=1,b=2;
-   char i = 'h';
-   string str = "hello";
-   a = a + 1;
+   a>=b;
 }
