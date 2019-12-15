@@ -5,7 +5,7 @@ public class parser {//进行语法和语义的分析
     public static Map<String,Map<String,String>>table= new HashMap<String,Map<String,String>>();
     public static List<String>Vn=new ArrayList<>();
     public static List<String>Vt=new ArrayList<>();
-    public static String[] input={"int","标识符","(",")","{","标识符","=","常数","}"};
+    public static String[] input={"int","标识符","(",")","{","标识符","=","常数",";","}"};
 
     public static void iniTable()
     {
@@ -18,7 +18,7 @@ public class parser {//进行语法和语义的分析
         function_definition.put("void","<函数返回值类型><函数声明>{<函数主体>}"); function_definition.put("char","<函数返回值类型><函数声明>{<函数主体>}");
         function_definition.put("int","<函数返回值类型><函数声明>{<函数主体>}"); function_definition.put("float","<函数返回值类型><函数声明>{<函数主体>}");
         Map type_specifier	=new HashMap();
-        type_specifier.put("void","void");type_specifier.put("char","char");type_specifier.put("int","int");type_specifier.put("float","float");
+        type_specifier.put("void","<void>");type_specifier.put("char","<char>");type_specifier.put("int","<int>");type_specifier.put("float","<float>");
         Map declaratory	=new HashMap();
         declaratory.put("标识符","<标识符>(<参数列表>)");
         Map parameter_list	=new HashMap();
@@ -35,7 +35,7 @@ public class parser {//进行语法和语义的分析
         Map variable_declaration=new HashMap();
         variable_declaration.put("char","<数据类型><标识符>;");variable_declaration.put("int","<数据类型><标识符>;");variable_declaration.put("float","<数据类型><标识符>;");
         Map data_type=new HashMap();
-        data_type.put("char","char");data_type.put("int","int");data_type.put("float","float");
+        data_type.put("char","<char>");data_type.put("int","<int>");data_type.put("float","<float>");
         Map statement_list=new HashMap();
         statement_list.put("}","");statement_list.put("标识符","<语句><语句列表>");
         Map statement=new HashMap();
@@ -104,7 +104,7 @@ public class parser {//进行语法和语义的分析
                             System.out.println(temp[t]+" 入栈");
                             sq.push(temp[t]);
                         }
-
+                        System.out.println("incircle");
                     }
                 }
                 else
@@ -146,7 +146,6 @@ public class parser {//进行语法和语义的分析
 
     public static void main(String[] args) {
         analyzer();
-
     }
 
 
