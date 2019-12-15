@@ -47,11 +47,11 @@ public class TabbedPane extends JPanel  {
     }
 
     public static void main(String[] args) {
-        /*JFrame frame=new JFrame("我的电脑 - 属性");
+        JFrame frame=new JFrame("我的电脑 - 属性");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new TabbedPane(),BorderLayout.CENTER);
         frame.pack();
-        frame.setVisible(true);*/
+        frame.setVisible(true);
     }
 
 }

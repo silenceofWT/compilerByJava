@@ -22,7 +22,8 @@ public class lexicalAnalyzer {//词法分析器
     public void CharToToken(List<String> text){//将字符数组扫描成Token
         fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空之前的内容
         char ch;//每次读取的字符
-        for (int i = 0; i < text.size();) {//遍历字符数组
+        for (int i = 0; i < text.size();) {
+            //遍历字符数组
             StringBuilder strToken = new StringBuilder();//Token序列
             ch = text.get(i).charAt(0);//扫描一个字符
 
@@ -128,14 +129,15 @@ public class lexicalAnalyzer {//词法分析器
                     }
                 }
             }
-            else if(ch ==  '\''){//字符
+            else if(ch ==  '\''){
+                //字符
             while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\'')) {//加入token序列
             strToken.append(ch);
             i += 1;
             ch = text.get(i).charAt(0);
         }
-        if (this.C.size() == 0 && tag == 0) {//如果标识符表为空且tag为0
-           // Tokens.add(CommonUtils.filterChar(strToken.toString()));
+        if (this.C.size() == 0) {//如果标识符表为空且tag为0
+            Tokens.add(CommonUtils.filterChar(strToken.toString()));
             TokenType.add("C");
             TokenNum.add((1));
             this.C.add(strToken.toString());
@@ -147,7 +149,7 @@ public class lexicalAnalyzer {//词法分析器
             for (int t = 0; t < this.C.size(); t++) {
 
                 if (this.C.get(t).equals(strToken.toString()) && tag == 0) {
-                  //  Tokens.add(CommonUtils.filterChar(strToken.toString()));
+                    Tokens.add(CommonUtils.filterChar(strToken.toString()));
                     TokenType.add("C");
                     TokenNum.add((t+1));
                     tag = 1;
@@ -156,7 +158,7 @@ public class lexicalAnalyzer {//词法分析器
                     break;
                 }
                 else {
-                  //  Tokens.add(CommonUtils.filterChar(strToken.toString()));
+                    Tokens.add(CommonUtils.filterChar(strToken.toString()));
                    this.C.add(strToken.toString());
                     tag = 1;
                     int put = this.C.size() - 1;
@@ -175,8 +177,8 @@ public class lexicalAnalyzer {//词法分析器
     i += 1;
     ch = text.get(i).charAt(0);
 }
-                if (this.S.size() == 0 && tag == 0) {//如果标识符表为空且tag为0
-                  //  Tokens.add(CommonUtils.filterChar(strToken.toString()));
+                if (this.S.size() == 0) {//如果标识符表为空且tag为0
+                    Tokens.add(CommonUtils.filterChar(strToken.toString()));
                     TokenType.add("c");
                     TokenNum.add((1));
                     this.S.add(strToken.toString());
@@ -189,7 +191,7 @@ public class lexicalAnalyzer {//词法分析器
                         for (int t = 0; t < this.S.size(); t++) {
 
         if (this.S.get(t).equals(strToken.toString()) && tag == 0) {
-           // Tokens.add(CommonUtils.filterChar(strToken.toString()));
+           Tokens.add(CommonUtils.filterChar(strToken.toString()));
             TokenType.add("S");
             TokenNum.add((1));
           tag = 1;
@@ -198,7 +200,7 @@ public class lexicalAnalyzer {//词法分析器
         break;
         }
         else {
-          //  Tokens.add(CommonUtils.filterChar(strToken.toString()));
+            Tokens.add(CommonUtils.filterChar(strToken.toString()));
             this.S.add(strToken.toString());
         tag = 1;
         int put = this.S.size() - 1;

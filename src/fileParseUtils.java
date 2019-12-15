@@ -8,29 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 
 public class fileParseUtils {//txt读取插件
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
-    public static List<String> charArr = new ArrayList<String>();// 保存解析后的字符数组
-    public static String filePath = "F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
-=======
-=======
 /*
->>>>>>> cc52b9b2cd580c7e3cbe431148dfa5d06ef47118
     public static final String fileName = "C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\inputCode.txt";
 */
 public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
     public static List<String> charArr = new ArrayList<String>();// 字符数组
 /*
     public static String filePath = "C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\outputFile\\Tokens.txt";
-<<<<<<< HEAD
->>>>>>> ebe099c0a1cc7c3b1f910af949439563c2ef36fc
-=======
 */
 
     public static String filePath ="F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
 
->>>>>>> cc52b9b2cd580c7e3cbe431148dfa5d06ef47118
     /*文件清空*/
     public static void clearInfoForFile(String fileName) {
         File file =new File(fileName);
@@ -70,6 +58,7 @@ public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inp
     txt解析
     功能：将txt内容解析成字符数组
     */
+
     public static void txtParse(){
         //读取txt文件 将txt的内容放入字符数组
         BufferedReader br = null;
