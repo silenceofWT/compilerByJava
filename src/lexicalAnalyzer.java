@@ -176,6 +176,7 @@ public class lexicalAnalyzer {//词法分析器
     strToken.append(ch);
     i += 1;
     ch = text.get(i).charAt(0);
+   // System.out.println("打印字符串");
 }
                 if (this.S.size() == 0) {//如果标识符表为空且tag为0
                     Tokens.add(CommonUtils.filterChar(strToken.toString()));
