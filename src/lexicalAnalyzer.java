@@ -52,7 +52,7 @@ public class lexicalAnalyzer {//词法分析器
                     this.i.add(strToken.toString());
                     Tokens.add(strToken.toString());//标识符
                     TokenType.add("i");
-                    TokenNum.add((i+1));
+                    TokenNum.add((1));
                     System.out.println("{i," + 1 + '}');
                     fileParseUtils.saveAsFileWriter("{i," + 1 + "}\n");
                     tag = 1;
@@ -73,10 +73,11 @@ public class lexicalAnalyzer {//词法分析器
                         else {
                             Tokens.add(strToken.toString());
                             TokenType.add("i");
-                            TokenNum.add((i+1));
+
                             this.i.add(strToken.toString());
                             tag = 1;
                             int put = this.i.size() - 1;
+                            TokenNum.add((put+1));
                             System.out.println("{i," + (put+1) + '}' );
                             fileParseUtils.saveAsFileWriter("{i," + (put+1) +"}\n");
                             break;
@@ -258,7 +259,9 @@ public class lexicalAnalyzer {//词法分析器
         l.CharToToken(fileParseUtils.charArr);
        // System.out.println(lexicalAnalyzer.TokenType.get(1));
        for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
-            System.out.println(lexicalAnalyzer.Tokens.get(i));
+           /* System.out.println(lexicalAnalyzer.Tokens.get(i));*/
+            System.out.println(lexicalAnalyzer.TokenNum.get(i));
+         /*  System.out.println(lexicalAnalyzer.TokenType.get(i));*/
         }
     }
 }
