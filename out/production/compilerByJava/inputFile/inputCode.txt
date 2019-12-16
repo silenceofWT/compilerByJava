@@ -1,4 +1,5 @@
-int main(){
-   a>=b;
-   char a = "a";
+void frt()
+{
+  int a;
+  a=3;
 }

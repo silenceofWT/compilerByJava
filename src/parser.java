@@ -5,7 +5,6 @@ public class parser {//进行语法和语义的分析
     public static Map<String,Map<String,String>>table= new HashMap<String,Map<String,String>>();
     public static List<String>Vn=new ArrayList<>();
     public static List<String>Vt=new ArrayList<>();
-    public static String[] input={"int","标识符","(",")","{","标识符","=","常数",";","}"};
 
     public static void iniTable()
     {
@@ -84,16 +83,23 @@ public class parser {//进行语法和语义的分析
         int tag = 0;
         while (!sq.empty())
         {
+            String b=lexicalAnalyzer.TokenType.get(tag);
+            if(b.equals("k")||b.equals("p"))
+            {
+                b=lexicalAnalyzer.Tokens.get(tag);
+            }
             if (Vn.contains(sq.peek()) ) //非终结符号
             {
                 String a=sq.peek();
-                String b=input[tag];
-                boolean x = Vn.contains(a);
-                boolean y = Vt.contains(b);
-                if (x && y )
+                if (Vt.contains(b))//判断是否在分析表内，a已在上一个if判断过
                 {
+                    if(table.get(a).get(b)==null)
+                    {
+                        System.out.println("没有可以匹配的规则，不能识别！出错！");
+                        return ;
+                    }
                     System.out.println(sq.peek()+"出栈");
-                    System.out.println(input[tag]+"inp");
+                    System.out.println(b+" input");
                     sq.pop();
                     System.out.println(table.get(a).get(b));
                     String[] temp=table.get(a).get(b).split("<|>");
@@ -104,18 +110,17 @@ public class parser {//进行语法和语义的分析
                             System.out.println(temp[t]+" 入栈");
                             sq.push(temp[t]);
                         }
-                        System.out.println("incircle");
                     }
                 }
                 else
                 {
-                    System.out.println("没有可以匹配的规则，不能识别！出错！");
+                    System.out.println("读取的单词不合法！");
                     return ;
                 }
             }
             else //终结符号
             {
-                if (sq.peek().equals(input[tag]))
+                if (sq.peek().equals(b))
                 {
                     System.out.println("识别 "+sq.peek()+" ，退栈");
                     tag++;
@@ -148,14 +153,11 @@ public class parser {//进行语法和语义的分析
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
-        // System.out.println(lexicalAnalyzer.TokenType.get(1));
-        for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
-            /*System.out.println(lexicalAnalyzer.Tokens.get(i));*/
-            System.out.println(lexicalAnalyzer.TokenNum.get(i));
-            System.out.println(lexicalAnalyzer.TokenType.get(i));
-        }
+        lexicalAnalyzer.showTokens();
+        parser.analyzer();
     }
-    }
+
+}
 
 
 

@@ -253,15 +253,23 @@ public class lexicalAnalyzer {//词法分析器
               }
         }
     }
+
+    public static void showTokens()
+    {
+        for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
+            System.out.println(lexicalAnalyzer.Tokens.get(i));
+            System.out.println(lexicalAnalyzer.TokenNum.get(i));
+            System.out.println(lexicalAnalyzer.TokenType.get(i));
+            System.out.println("-----------------");
+        }
+    }
+
+
     public static void main(String[] args) {//主函数 测试
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
        // System.out.println(lexicalAnalyzer.TokenType.get(1));
-       for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
-            /*System.out.println(lexicalAnalyzer.Tokens.get(i));*/
-            System.out.println(lexicalAnalyzer.TokenNum.get(i));
-           System.out.println(lexicalAnalyzer.TokenType.get(i));
-        }
+        showTokens();
     }
 }

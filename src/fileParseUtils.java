@@ -11,13 +11,13 @@ public class fileParseUtils {//txt读取插件
 /*
     public static final String fileName = "C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\inputCode.txt";
 */
-public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
+public static final String fileName = "C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\inputCode.txt";
     public static List<String> charArr = new ArrayList<String>();// 字符数组
 /*
     public static String filePath = "C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\outputFile\\Tokens.txt";
 */
 
-    public static String filePath ="F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
+    public static String filePath ="C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\Tokens.txt";
 
     /*文件清空*/
     public static void clearInfoForFile(String fileName) {
