@@ -145,8 +145,17 @@ public class parser {//进行语法和语义的分析
     }
 
     public static void main(String[] args) {
-        analyzer();
+        lexicalAnalyzer l = new lexicalAnalyzer();
+        fileParseUtils.txtParse();
+        l.CharToToken(fileParseUtils.charArr);
+        // System.out.println(lexicalAnalyzer.TokenType.get(1));
+        for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
+            /*System.out.println(lexicalAnalyzer.Tokens.get(i));*/
+            System.out.println(lexicalAnalyzer.TokenNum.get(i));
+            System.out.println(lexicalAnalyzer.TokenType.get(i));
+        }
+    }
     }
 
 
-}
+
