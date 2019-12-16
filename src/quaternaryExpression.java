@@ -13,15 +13,15 @@ public class quaternaryExpression {//生成四元式
     public List<String> C = new ArrayList<String>();// 字符
     public List<String> S = new ArrayList<String>();// 字符串
     public List<String> c = new ArrayList<String>();// 数字*/
-    public Stack<String> sem = new Stack<>();//语义栈
-    public List<List<String>> Qt =new ArrayList<List<String>>();//四元式区
-    public List<String> Qt_0=new ArrayList<String>();//四元式第一元
-    public List<String> Qt_1=new ArrayList<String>();//四元式第二元
-    public List<String> Qt_2=new ArrayList<String>();//四元式第三元
-    public List<String> Qt_3=new ArrayList<String>();//四元式第四元
+    public static Stack<String> sem = new Stack<>();//语义栈
+    public static List<List<String>> Qt =new ArrayList<List<String>>();//四元式区
+    public static List<String> Qt_0=new ArrayList<String>();//四元式第一元
+    public static List<String> Qt_1=new ArrayList<String>();//四元式第二元
+    public static List<String> Qt_2=new ArrayList<String>();//四元式第三元
+    public static List<String> Qt_3=new ArrayList<String>();//四元式第四元
 
 
-    public void init()//public void init(List<String> ii,List<String> CC,List<String> SS,List<String> cc)
+    public static void init()//public void init(List<String> ii,List<String> CC,List<String> SS,List<String> cc)
     {
         /*i=ii;
         C=CC;
@@ -33,7 +33,7 @@ public class quaternaryExpression {//生成四元式
         Qt.add(Qt_3);
     }
 
-    public void produceQE(String command)
+    public static void produceQE(String command)
     {
         String[] splitcommand=command.split("\\(|\\)");
         if(splitcommand[0].equals("PUSH"))
@@ -51,7 +51,7 @@ public class quaternaryExpression {//生成四元式
         }
     }
 
-    public void show()
+    public static void show()
     {
         for(int i=0;i<Qt.get(0).size();i++)
         {

@@ -1,5 +1,7 @@
 void frt()
 {
   int a;
+  int c;
+  c=5;
   a=3;
 }

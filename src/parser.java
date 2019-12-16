@@ -40,9 +40,9 @@ public class parser {//进行语法和语义的分析
         Map statement=new HashMap();
         statement.put("标识符","<赋值表达式>;");
         Map assignment_expression=new HashMap();
-        assignment_expression.put("标识符","<标识符>=<基本表达式>");
+        assignment_expression.put("标识符","<标识符>[PUSH(标识符)]=<基本表达式>[ASSI(=)]");
         Map basic_expression=new HashMap();
-        basic_expression.put("标识符","<标识符>");basic_expression.put("常数","<常数>");basic_expression.put("字符","<字符>");
+        basic_expression.put("标识符","<标识符>[PUSH(标识符)]");basic_expression.put("常数","<常数>[PUSH(常数)]");basic_expression.put("字符","<字符>[PUSH(字符)]");
 
         table.put("程序",program);
         table.put("外部声明",external_declaration);
@@ -65,7 +65,7 @@ public class parser {//进行语法和语义的分析
         System.out.println("\t" + table);
 
         Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("void");Vt.add("int");Vt.add("float");
-        Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");
+        Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");
 
         Vn.add("程序");Vn.add("外部声明");Vn.add("函数定义");Vn.add("函数返回值类型");Vn.add("函数声明");
         Vn.add("参数列表");Vn.add("参数声明");Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
@@ -102,7 +102,7 @@ public class parser {//进行语法和语义的分析
                     System.out.println(b+" input");
                     sq.pop();
                     System.out.println(table.get(a).get(b));
-                    String[] temp=table.get(a).get(b).split("<|>");
+                    String[] temp=table.get(a).get(b).split("<|>|\\[|]" );
                     for (int t = temp.length - 1; t > 0; t--)
                     {
                         if(temp[t].length()!=0)
@@ -118,18 +118,41 @@ public class parser {//进行语法和语义的分析
                     return ;
                 }
             }
-            else //终结符号
+            else if(Vt.contains(sq.peek()))//终结符号
             {
                 if (sq.peek().equals(b))
                 {
                     System.out.println("识别 "+sq.peek()+" ，退栈");
                     tag++;
+
                     sq.pop();
                 }
                 else
                 {
                     System.out.println("不能识别"+sq.peek()+"！出错！");
                     return ;
+                }
+            }
+            else//动作符号
+            {
+                System.out.println("动作符号aa|"+sq.peek()+"|aa");
+                String[] temp=sq.peek().split("\\(|\\)");
+                if(temp[0].equals("ASSI"))
+                {
+                    quaternaryExpression.produceQE(sq.peek());
+                    System.out.println(sq.peek());
+                    sq.pop();
+                }
+                else if(temp[0].equals("PUSH"))
+                {
+                    quaternaryExpression.produceQE("PUSH("+lexicalAnalyzer.Tokens.get(tag-1)+")");
+                    System.out.println(tag+"|PUSH("+lexicalAnalyzer.Tokens.get(tag-1)+")|"+tag);
+                    sq.pop();
+                }
+                else
+                {
+                    System.out.println("cut");
+                    return;
                 }
             }
         }
@@ -154,7 +177,13 @@ public class parser {//进行语法和语义的分析
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
         lexicalAnalyzer.showTokens();
+        quaternaryExpression qE=new quaternaryExpression();
+        qE.init();
+
         parser.analyzer();
+
+        qE.show();
+
     }
 
 }
