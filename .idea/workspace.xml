@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="解决词法分析器的bug">
+    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +137,8 @@
       <workItem from="1576218095866" duration="680000" />
       <workItem from="1576383258959" duration="620000" />
       <workItem from="1576385583801" duration="887000" />
-      <workItem from="1576386585821" duration="250000" />
+      <workItem from="1576386585821" duration="542000" />
+      <workItem from="1576476254830" duration="541000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -173,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576218480817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完善词法分析器">
+      <created>1576387102938</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576387102938</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,33 +232,34 @@
     <MESSAGE value="算术表达式语法分析器，基本完成" />
     <MESSAGE value="语法分析器，增加拆token函数，修改智障操作" />
     <MESSAGE value="解决词法分析器的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决词法分析器的bug" />
+    <MESSAGE value="完善词法分析器" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善词法分析器" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576384787914" />
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1576384787914" />
-    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576385004496">
+    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576387101500">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576385004496" />
+    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576387101500" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576384787914" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576384787914" />
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1576387034035">
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1576476837478">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576387034035" />
-    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1576387034035">
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576476837478" />
+    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1576476837478">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576387034035" />
-    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1576387034035">
+    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576476837478" />
+    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1576476837478">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576387034035" />
-    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1576387034035">
+    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576476837478" />
+    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1576476837478">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576387034035" />
+    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576476837478" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576385278961">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -266,10 +276,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576385278961" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576385187288">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576387113466">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576385187288" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576387113466" />
     <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576384787914" />
     <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1576384787914" />
     <state x="555" y="223" key="git4idea.merge.GitMergeDialog" timestamp="1576385167023">

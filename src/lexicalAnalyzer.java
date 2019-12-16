@@ -51,7 +51,7 @@ public class lexicalAnalyzer {//词法分析器
                 if (this.i.size() == 0 && tag == 0) {//如果标识符表为空且tag为0
                     this.i.add(strToken.toString());
                     Tokens.add(strToken.toString());//标识符
-                    TokenType.add("i");
+                    TokenType.add("标识符");
                     TokenNum.add((1));
                     System.out.println("{i," + 1 + '}');
                     fileParseUtils.saveAsFileWriter("{i," + 1 + "}\n");
@@ -64,7 +64,7 @@ public class lexicalAnalyzer {//词法分析器
                         if (this.i.get(t).equals(strToken.toString())) {
                             tag = 1;
                             Tokens.add(strToken.toString());
-                            TokenType.add("i");
+                            TokenType.add("标识符");
                             TokenNum.add((t+1));
                             System.out.println("{i," + (t+1) + '}');
                             fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n");
@@ -72,7 +72,7 @@ public class lexicalAnalyzer {//词法分析器
                         }
                         else {
                             Tokens.add(strToken.toString());
-                            TokenType.add("i");
+                            TokenType.add("标识符");
 
                             this.i.add(strToken.toString());
                             tag = 1;
@@ -93,7 +93,7 @@ public class lexicalAnalyzer {//词法分析器
                 }
                 if(this.c.size() == 0){
                     Tokens.add(strToken.toString());
-                    TokenType.add("c");
+                    TokenType.add("常数");
                     TokenNum.add((1));
                     this.c.add(strToken.toString());
                     System.out.println("{c," + 1 + '}');
@@ -107,7 +107,7 @@ public class lexicalAnalyzer {//词法分析器
                         if (this.c.get(t).equals(strToken.toString()) && tag == 0) {
                             tag = 1;
                             Tokens.add(strToken.toString());
-                            TokenType.add("c");
+                            TokenType.add("常数");
                             TokenNum.add((t));
                             System.out.println( "{c, " + (t+1) + '}');
                             fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n");
@@ -120,7 +120,7 @@ public class lexicalAnalyzer {//词法分析器
                             this.c.add(strToken.toString());
                             tag = 1;
                             int put = this.c.size() - 1;
-                            TokenType.add("c");
+                            TokenType.add("常数");
                             TokenNum.add((put+1));
                             System.out.println("{c," + (put+1) + '}' );
                             fileParseUtils.saveAsFileWriter("{i," + (put+1) + "}\n");
@@ -139,7 +139,7 @@ public class lexicalAnalyzer {//词法分析器
         }
         if (this.C.size() == 0) {//如果标识符表为空且tag为0
             Tokens.add(CommonUtils.filterChar(strToken.toString()));
-            TokenType.add("C");
+            TokenType.add("字符");
             TokenNum.add((1));
             this.C.add(strToken.toString());
             System.out.println( "{C," + 1 + '}');
@@ -151,7 +151,7 @@ public class lexicalAnalyzer {//词法分析器
 
                 if (this.C.get(t).equals(strToken.toString()) && tag == 0) {
                     Tokens.add(CommonUtils.filterChar(strToken.toString()));
-                    TokenType.add("C");
+                    TokenType.add("字符");
                     TokenNum.add((t+1));
                     tag = 1;
                     System.out.println("{C," + (t+1) + '}');
@@ -163,7 +163,7 @@ public class lexicalAnalyzer {//词法分析器
                    this.C.add(strToken.toString());
                     tag = 1;
                     int put = this.C.size() - 1;
-                    TokenType.add("C");
+                    TokenType.add("字符");
                     TokenNum.add((put+1));
                     System.out.println("{C," + (put+1) + '}' );
                     fileParseUtils.saveAsFileWriter("{C," + (put+1) +"}\n");
@@ -259,9 +259,9 @@ public class lexicalAnalyzer {//词法分析器
         l.CharToToken(fileParseUtils.charArr);
        // System.out.println(lexicalAnalyzer.TokenType.get(1));
        for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
-           /* System.out.println(lexicalAnalyzer.Tokens.get(i));*/
+            /*System.out.println(lexicalAnalyzer.Tokens.get(i));*/
             System.out.println(lexicalAnalyzer.TokenNum.get(i));
-         /*  System.out.println(lexicalAnalyzer.TokenType.get(i));*/
+           System.out.println(lexicalAnalyzer.TokenType.get(i));
         }
     }
 }
