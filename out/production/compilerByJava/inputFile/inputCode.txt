@@ -1,7 +1,9 @@
-void frt()
+program
 {
   int a;
   int c;
   a=3;
   c=5;
+
 }
+end

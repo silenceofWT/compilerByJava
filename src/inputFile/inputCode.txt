@@ -1,4 +1,4 @@
-void frt()
+program
 {
   int a;
   int c;
@@ -6,3 +6,4 @@ void frt()
   c=5;
 
 }
+end

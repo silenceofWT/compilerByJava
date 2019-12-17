@@ -4,9 +4,9 @@ import java.util.List;
 public class lexicalAnalyzer {//词法分析器
 
     //关键字参考表
-   public String[] k = { "main", "void", "if", "else", "while",
+   public String[] k = { "void", "main", "if", "else", "while","program",
            "for", "int", "char", "string", "break", "continue",
-            "return","switch","case","default" };
+            "return","end","case","default"};
    //界符参考表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
@@ -33,6 +33,7 @@ public class lexicalAnalyzer {//词法分析器
         fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空txt之前的内容
         char ch;//每次读取的字符
         for (int i = 0; i < text.size();) {
+            //System.out.println(i);
             //遍历字符数组
             StringBuilder strToken = new StringBuilder();//Token序列
             ch = text.get(i).charAt(0);//扫描一个字符
@@ -43,6 +44,10 @@ public class lexicalAnalyzer {//词法分析器
                 while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {//加入token序列
                     strToken.append(ch);
                     i++;
+                    if(i==text.size())
+                    {
+                        break;
+                    }
                     ch = text.get(i).charAt(0);
                 }
                 for (int j = 0; j < k.length; j++) {//查阅关键字表
@@ -98,7 +103,11 @@ public class lexicalAnalyzer {//词法分析器
             else if (ch >= '0' && ch <= '9') {//数字字面量
                 while ((ch >= '0' && ch <= '9')|| ch == '.') {
                     strToken.append(ch);
-                    i += 1;
+                    i++;
+                    if(i==text.size())
+                    {
+                        break;
+                    }
                     ch = text.get(i).charAt(0);
                 }
                 if(this.c.size() == 0){
@@ -145,6 +154,10 @@ public class lexicalAnalyzer {//词法分析器
             while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\'')) {//加入token序列
             strToken.append(ch);
             i += 1;
+                if(i==text.size())
+                {
+                    break;
+                }
             ch = text.get(i).charAt(0);
         }
         if (this.C.size() == 0) {//如果标识符表为空且tag为0
@@ -184,9 +197,13 @@ public class lexicalAnalyzer {//词法分析器
     }
             else if(ch == '\"'){
             while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\"')) {//加入token序列
-    strToken.append(ch);
-    i += 1;
-    ch = text.get(i).charAt(0);
+             strToken.append(ch);
+             i += 1;
+                if(i==text.size())
+                {
+                    break;
+                }
+             ch = text.get(i).charAt(0);
    // System.out.println("打印字符串");
 }
                 if (this.S.size() == 0) {//如果标识符表为空且tag为0
@@ -199,8 +216,8 @@ public class lexicalAnalyzer {//词法分析器
 
                         tag = 1;
                         }
-                        if (this.S.size() != 0 && tag == 0) {
-                        for (int t = 0; t < this.S.size(); t++) {
+                 if (this.S.size() != 0 && tag == 0) {
+                   for (int t = 0; t < this.S.size(); t++) {
 
         if (this.S.get(t).equals(strToken.toString()) && tag == 0) {
            Tokens.add(CommonUtils.filterChar(strToken.toString()));
@@ -231,6 +248,10 @@ public class lexicalAnalyzer {//词法分析器
                     //System.out.println(1);
                     strToken.append(ch);
                     i++;
+                    if(i==text.size())
+                    {
+                        break;
+                    }
                     ch = text.get(i).charAt(0);
                 }
 
@@ -256,9 +277,7 @@ public class lexicalAnalyzer {//词法分析器
                     }
                 }
             }
-
-
-        if (tag == 0) {//如果tag为0是空格 回车 换行 需要过滤
+            if (tag == 0) {//如果tag为0是空格 回车 换行 需要过滤
                   i++;
               }
         }
@@ -277,6 +296,7 @@ public class lexicalAnalyzer {//词法分析器
 
 
     public static void main(String[] args) {//主函数 测试
+
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);

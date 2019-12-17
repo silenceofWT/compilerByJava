@@ -3,6 +3,7 @@ import java.io.*;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -85,6 +86,7 @@ public class fileParseUtils {//txt读取插件
     }
 
     public static void main(String[] args) {
-
+            //fileParseUtils.txtParse();
+        //System.out.println(charArr);
     }
 }

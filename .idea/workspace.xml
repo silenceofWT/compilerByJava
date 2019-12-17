@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/icon/tab1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icon/tab2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/fileParseUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/fileParseUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/userUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/userUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TabbedPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextFileOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextFileOpener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileParseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileParseUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputFile/inputCode.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/quaternaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quaternaryExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +46,6 @@
       </set>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="700" />
-    <option name="width" value="1950" />
-    <option name="height" value="2075" />
-  </component>
   <component name="ProjectId" id="1UhqgoS9bQqjcvDlt7JKhOn0xVX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,16 +62,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/icon" />
   </component>
-  <component name="RunManager" selected="Application.CommonUtils">
-    <configuration name="CommonUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CommonUtils" />
-      <module name="compilerByJava" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\javaProject\compilerByJava\src\icon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\javaProject\compilerByJava\src\icon" />
+      <recent name="F:\javaProject\compilerByJava\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.lexicalAnalyzer">
     <configuration name="TabbedPane" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TabbedPane" />
       <module name="compilerByJava" />
@@ -81,8 +81,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextFileOpener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TextFileOpener" />
+    <configuration name="fileParseUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fileParseUtils" />
+      <module name="compilerByJava" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lexicalAnalyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lexicalAnalyzer" />
       <module name="compilerByJava" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CommonUtils" />
+        <item itemvalue="Application.lexicalAnalyzer" />
+        <item itemvalue="Application.fileParseUtils" />
         <item itemvalue="Application.parser" />
-        <item itemvalue="Application.TabbedPane" />
-        <item itemvalue="Application.TextFileOpener" />
         <item itemvalue="Application.userUI" />
+        <item itemvalue="Application.TabbedPane" />
       </list>
     </recent_temporary>
   </component>
@@ -275,38 +282,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576479901356" />
-    <state width="1493" height="281" key="GridCell.Tab.0.bottom" timestamp="1576562555531">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom" timestamp="1576569704061">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576562555531" />
-    <state width="1493" height="281" key="GridCell.Tab.0.center" timestamp="1576562555531">
+    <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576569704061" />
+    <state width="1493" height="242" key="GridCell.Tab.0.center" timestamp="1576569704061">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576562555531" />
-    <state width="1493" height="281" key="GridCell.Tab.0.left" timestamp="1576562555531">
+    <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576569704061" />
+    <state width="1493" height="242" key="GridCell.Tab.0.left" timestamp="1576569704061">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576562555531" />
-    <state width="1493" height="281" key="GridCell.Tab.0.right" timestamp="1576562555531">
+    <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576569704061" />
+    <state width="1493" height="242" key="GridCell.Tab.0.right" timestamp="1576569704061">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576562555531" />
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576510794925">
+    <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576569704061" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576510794925" />
-    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1576510794924">
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1576510794924" />
-    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1576510794924">
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1576510794924" />
-    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1576510794924">
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576510794924" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
     <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576476956803">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

@@ -2,25 +2,40 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class TabbedPane extends JPanel  {
+public class TabbedPane extends JPanel{
     public TabbedPane()
     {
+        //布局充满主窗口
         super(new GridLayout(1,1));
+        //新建选项卡1
         JTabbedPane tabbedPane=new JTabbedPane();
-        ImageIcon icon=createImageIcon("tab.jp1g");
-        JComponent panel1=makeTextPanel("源码编辑");
-        tabbedPane.addTab("源码编辑",icon, panel1);
+        //选项卡图标
+        ImageIcon icon1=createImageIcon("icon/tab2.png");
+        ImageIcon icon2=createImageIcon("icon/tab2.png");
+      /*  ImageIcon icon3=createImageIcon("icon/tab3.png");
+        ImageIcon icon4=createImageIcon("icon/tab4.png");*/
+        //选项卡2标题
+        JComponent panel1=makeTextPanel("源码");
+        //添加选项卡1
+        tabbedPane.addTab("源码",icon1, panel1);
+        //选项卡1快键键
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
+
+        //选项卡2标题
         JComponent panel2=makeTextPanel("Token序列");
-        tabbedPane.addTab("Token序列",icon,panel2);
+        //添加选项卡2
+        tabbedPane.addTab("Token序列",icon2,panel2);
+        //选项卡2快键键
         tabbedPane.setMnemonicAt(1,KeyEvent.VK_2);
-        JComponent panel3=makeTextPanel("高级");
-        tabbedPane.addTab("高级",icon,panel3,"Still does nothing");
+
+
+       /* JComponent panel3=makeTextPanel("高级");
+        tabbedPane.addTab("高级",icon3,panel3,"Still does nothing");
         tabbedPane.setMnemonicAt(2,KeyEvent.VK_3);
         JComponent panel4=makeTextPanel("系统保护");
         panel4.setPreferredSize(new Dimension(410,50));
-        tabbedPane.addTab("系统保护",icon,panel4,"Does nothing at all");
-        tabbedPane.setMnemonicAt(3,KeyEvent.VK_4);
+        tabbedPane.addTab("系统保护",icon4,panel4,"Does nothing at all");
+        tabbedPane.setMnemonicAt(3,KeyEvent.VK_4);*/
         add(tabbedPane);
     }
     protected JComponent makeTextPanel(String text)
@@ -47,11 +62,11 @@ public class TabbedPane extends JPanel  {
     }
 
     public static void main(String[] args) {
-        JFrame frame=new JFrame("我的电脑 - 属性");
+       /* JFrame frame=new JFrame("我的电脑 - 属性");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new TabbedPane(),BorderLayout.CENTER);
         frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(true);*/
     }
 
 }
