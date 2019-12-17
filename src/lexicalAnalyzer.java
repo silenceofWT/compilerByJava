@@ -2,38 +2,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class lexicalAnalyzer {//词法分析器
-
-    //关键字参考表
-   public String[] k = { "void", "program", "if", "else", "while","program",
+   public String[] k = { "program", "void", "if", "else", "while",
            "for", "int", "char", "string", "break", "continue",
-            "return","end","case","default"};
-   //界符参考表
+            "return","end","case","default" };// 关键字表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
-        ";","(",")",",","[","]"};
-    //标识符表
-   public List<String> i = new ArrayList<String>();
-   //字符表
-   public List<String> C = new ArrayList<String>();
-    //字符串表
-   public List<String> S = new ArrayList<String>();
-    //常数对齐
-   public List<String> c = new ArrayList<String>();
-    //Token序列 内容：单词的数组
-   public static List<String> Tokens = new ArrayList<>();
-    //Token序列类型
-   public static List<String> TokenType = new ArrayList<>();
-    //Token序列标号
-   public static List<Integer> TokenNum = new ArrayList<>();
+        ";","(",")",",","[","]"};//界符表
+   public List<String> i = new ArrayList<String>();// 变量名
+   public List<String> C = new ArrayList<String>();// 字符
+   public List<String> S = new ArrayList<String>();// 字符串
+   public List<String> c = new ArrayList<String>();// 数字
+   public static List<String> Tokens = new ArrayList<>();//Token序列
+   public static List<String> TokenType = new ArrayList<>();//Token序列类型
+   public static List<Integer> TokenNum = new ArrayList<>();//Token序列标号
+
     /*
     *词法分析器
-    *功能：将字符数组的内容解析成Token
     */
     public void CharToToken(List<String> text){//将字符数组扫描成Token
-        fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空txt之前的内容
+        fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空之前的内容
         char ch;//每次读取的字符
         for (int i = 0; i < text.size();) {
-            //System.out.println(i);
             //遍历字符数组
             StringBuilder strToken = new StringBuilder();//Token序列
             ch = text.get(i).charAt(0);//扫描一个字符
@@ -103,7 +92,7 @@ public class lexicalAnalyzer {//词法分析器
             else if (ch >= '0' && ch <= '9') {//数字字面量
                 while ((ch >= '0' && ch <= '9')|| ch == '.') {
                     strToken.append(ch);
-                    i++;
+                    i += 1;
                     if(i==text.size())
                     {
                         break;
@@ -197,13 +186,13 @@ public class lexicalAnalyzer {//词法分析器
     }
             else if(ch == '\"'){
             while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\"')) {//加入token序列
-             strToken.append(ch);
-             i += 1;
+                strToken.append(ch);
+                i += 1;
                 if(i==text.size())
                 {
                     break;
                 }
-             ch = text.get(i).charAt(0);
+    ch = text.get(i).charAt(0);
    // System.out.println("打印字符串");
 }
                 if (this.S.size() == 0) {//如果标识符表为空且tag为0
@@ -216,8 +205,8 @@ public class lexicalAnalyzer {//词法分析器
 
                         tag = 1;
                         }
-                 if (this.S.size() != 0 && tag == 0) {
-                   for (int t = 0; t < this.S.size(); t++) {
+                        if (this.S.size() != 0 && tag == 0) {
+                        for (int t = 0; t < this.S.size(); t++) {
 
         if (this.S.get(t).equals(strToken.toString()) && tag == 0) {
            Tokens.add(CommonUtils.filterChar(strToken.toString()));
@@ -277,13 +266,14 @@ public class lexicalAnalyzer {//词法分析器
                     }
                 }
             }
-            if (tag == 0) {//如果tag为0是空格 回车 换行 需要过滤
+
+
+        if (tag == 0) {//如果tag为0是空格 回车 换行 需要过滤
                   i++;
               }
         }
     }
-   /*显示Token内容
-   * */
+
     public static void showTokens()
     {
         for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
@@ -296,10 +286,10 @@ public class lexicalAnalyzer {//词法分析器
 
 
     public static void main(String[] args) {//主函数 测试
-
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
+       // System.out.println(lexicalAnalyzer.TokenType.get(1));
         showTokens();
     }
 }
