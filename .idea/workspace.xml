@@ -12,6 +12,8 @@
       <change beforePath="$PROJECT_DIR$/src/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputFile/inputCode.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/quaternaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quaternaryExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/userUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +42,11 @@
         <option value="F:\javaProject\compilerByJava\.idea" />
       </set>
     </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="700" />
+    <option name="width" value="1950" />
+    <option name="height" value="2075" />
   </component>
   <component name="ProjectId" id="1UhqgoS9bQqjcvDlt7JKhOn0xVX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -144,6 +151,8 @@
       <workItem from="1576476254830" duration="3239000" />
       <workItem from="1576479847174" duration="55000" />
       <workItem from="1576562417561" duration="1219000" />
+      <workItem from="1576478283620" duration="7107000" />
+      <workItem from="1576500992688" duration="8011000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -194,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576476944915</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="整合分析器">
+      <created>1576488037789</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576488037789</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +261,8 @@
     <MESSAGE value="语法分析器，增加拆token函数，修改智障操作" />
     <MESSAGE value="解决词法分析器的bug" />
     <MESSAGE value="完善词法分析器" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善词法分析器" />
+    <MESSAGE value="整合分析器" />
+    <option name="LAST_COMMIT_MESSAGE" value="整合分析器" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576384787914" />

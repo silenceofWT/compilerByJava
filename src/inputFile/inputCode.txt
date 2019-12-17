@@ -4,4 +4,5 @@ void frt()
   int c;
   a=3;
   c=5;
+
 }
