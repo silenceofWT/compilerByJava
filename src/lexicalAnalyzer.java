@@ -4,7 +4,7 @@ import java.util.List;
 public class lexicalAnalyzer {//词法分析器
 
     //关键字参考表
-   public String[] k = { "void", "main", "if", "else", "while","program",
+   public String[] k = { "void", "program", "if", "else", "while","program",
            "for", "int", "char", "string", "break", "continue",
             "return","end","case","default"};
    //界符参考表

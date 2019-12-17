@@ -10,8 +10,8 @@ public class parser {//进行语法和语义的分析
     {
 
         Map program=new HashMap();
-        program.put("void","<外部声明>");program.put("char","<外部声明>");program.put("int","<外部声明>");program.put("float","<外部声明>");
-        Map external_declaration=new HashMap();
+        program.put("program","<program>{<函数主体>}<end>");
+        /*Map external_declaration=new HashMap();
         external_declaration.put("void","<函数定义>");external_declaration.put("char","<函数定义>");external_declaration.put("int","<函数定义>");external_declaration.put("float","<函数定义>");
         Map function_definition=new HashMap();
         function_definition.put("void","<函数返回值类型><函数声明>{<函数主体>}"); function_definition.put("char","<函数返回值类型><函数声明>{<函数主体>}");
@@ -25,6 +25,7 @@ public class parser {//进行语法和语义的分析
         parameter_list.put(")","");
         Map parameter_declaration	=new HashMap();
         parameter_declaration.put("char","<数据类型><标识符>");parameter_declaration.put("int","<数据类型><标识符>");parameter_declaration.put("float","<数据类型><标识符>");
+        */
         Map function_body=new HashMap();
         function_body.put("标识符","<变量声明列表><语句列表>");function_body.put("char","<变量声明列表><语句列表>");function_body.put("int","<变量声明列表><语句列表>");
         function_body.put("float","<变量声明列表><语句列表>");function_body.put("}","<变量声明列表><语句列表>");
@@ -45,12 +46,12 @@ public class parser {//进行语法和语义的分析
         basic_expression.put("标识符","<标识符>[PUSH(标识符)]");basic_expression.put("常数","<常数>[PUSH(常数)]");basic_expression.put("字符","<字符>[PUSH(字符)]");
 
         table.put("程序",program);
-        table.put("外部声明",external_declaration);
+        /*table.put("外部声明",external_declaration);
         table.put("函数定义",function_definition);
         table.put("函数返回值类型",type_specifier);
         table.put("函数声明",declaratory);
         table.put("参数列表",parameter_list);
-        table.put("参数声明",parameter_declaration);
+        table.put("参数声明",parameter_declaration);*/
         table.put("函数主体",function_body);
         table.put("变量声明列表",variable_declaration_list);
         table.put("变量声明",variable_declaration);
@@ -64,11 +65,11 @@ public class parser {//进行语法和语义的分析
         System.out.println(" Map Elements");
         System.out.println("\t" + table);
 
-        Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("void");Vt.add("int");Vt.add("float");
-        Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");
+        Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("program");Vt.add("int");Vt.add("float");
+        Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");Vt.add("end");
 
-        Vn.add("程序");Vn.add("外部声明");Vn.add("函数定义");Vn.add("函数返回值类型");Vn.add("函数声明");
-        Vn.add("参数列表");Vn.add("参数声明");Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
+        Vn.add("程序");//Vn.add("外部声明");Vn.add("函数定义");Vn.add("函数返回值类型");Vn.add("函数声明");Vn.add("参数列表");Vn.add("参数声明");
+        Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
         Vn.add("数据类型");Vn.add("语句列表");Vn.add("语句");Vn.add("赋值表达式");Vn.add("基本表达式");
 
     }
