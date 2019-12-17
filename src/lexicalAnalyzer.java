@@ -2,25 +2,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class lexicalAnalyzer {//词法分析器
+
+    //关键字参考表
    public String[] k = { "main", "void", "if", "else", "while",
            "for", "int", "char", "string", "break", "continue",
-            "return","switch","case","default" };// 关键字表
+            "return","switch","case","default" };
+   //界符参考表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
-        ";","(",")",",","[","]"};//界符表
-   public List<String> i = new ArrayList<String>();// 变量名
-   public List<String> C = new ArrayList<String>();// 字符
-   public List<String> S = new ArrayList<String>();// 字符串
-   public List<String> c = new ArrayList<String>();// 数字
-   public static List<String> Tokens = new ArrayList<>();//Token序列
-   public static List<String> TokenType = new ArrayList<>();//Token序列类型
-   public static List<Integer> TokenNum = new ArrayList<>();//Token序列标号
-
+        ";","(",")",",","[","]"};
+    //标识符表
+   public List<String> i = new ArrayList<String>();
+   //字符表
+   public List<String> C = new ArrayList<String>();
+    //字符串表
+   public List<String> S = new ArrayList<String>();
+    //常数对齐
+   public List<String> c = new ArrayList<String>();
+    //Token序列 内容：单词的数组
+   public static List<String> Tokens = new ArrayList<>();
+    //Token序列类型
+   public static List<String> TokenType = new ArrayList<>();
+    //Token序列标号
+   public static List<Integer> TokenNum = new ArrayList<>();
     /*
     *词法分析器
+    *功能：将字符数组的内容解析成Token
     */
     public void CharToToken(List<String> text){//将字符数组扫描成Token
-        fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空之前的内容
+        fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空txt之前的内容
         char ch;//每次读取的字符
         for (int i = 0; i < text.size();) {
             //遍历字符数组
@@ -253,7 +263,8 @@ public class lexicalAnalyzer {//词法分析器
               }
         }
     }
-
+   /*显示Token内容
+   * */
     public static void showTokens()
     {
         for (int i = 0; i < lexicalAnalyzer.Tokens.size();i++){
@@ -269,7 +280,6 @@ public class lexicalAnalyzer {//词法分析器
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
-       // System.out.println(lexicalAnalyzer.TokenType.get(1));
         showTokens();
     }
 }

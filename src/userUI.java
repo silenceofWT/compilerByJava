@@ -26,14 +26,6 @@ public class userUI extends JFrame{//用户界面
     }
 
 
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
         new userUI();
     }
