@@ -38,7 +38,7 @@ public class block {
                 inNum  = i + 1;
                 num.add(inNum);
                 i++;//转向下一个四元式
-            }else if(Qt.get(0).get(i).equals("if")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
+            }/*else if(Qt.get(0).get(i).equals("if")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
 
 
             }else if(){//入口条件三 紧跟在条件转移语句后面的语句
@@ -49,7 +49,7 @@ public class block {
 
             }else if(){//出口条件三 由条件语句或无条件语句能转到的语句
 
-            }
+            }*/
 
 
 
