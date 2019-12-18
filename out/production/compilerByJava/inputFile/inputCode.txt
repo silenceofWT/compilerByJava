@@ -2,7 +2,7 @@ program
 {
   int a;
   int c;
-  a=3;
+  a=3 - 1;
   c=5;
 
 }

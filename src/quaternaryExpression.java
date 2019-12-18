@@ -20,6 +20,7 @@ public class quaternaryExpression {//生成四元式
     public static List<String> Qt_2=new ArrayList<String>();//四元式第三元
     public static List<String> Qt_3=new ArrayList<String>();//四元式第四元
     public static int Tn;
+    public static String QTFilePath = "F:\\javaProject\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
 
     public static void init()//public void init(List<String> ii,List<String> CC,List<String> SS,List<String> cc)
     {
@@ -75,14 +76,24 @@ public class quaternaryExpression {//生成四元式
         }
     }
 
+    public static void writeToTxt()
+    {
+        fileParseUtils.clearInfoForFile(QTFilePath);
+        String qtStr;//存储四元式字符串
+        for(int i=0;i<Qt.get(0).size();i++)
+        {
+            qtStr  = "("+Qt.get(0).get(i)+" , " + Qt.get(1).get(i)+" , " + Qt.get(2).get(i)+" , " + Qt.get(3).get(i)+")\n";
+            fileParseUtils.saveAsFileWriter(qtStr,QTFilePath);
+        }
+    }
     public static void main(String[] args)
     {
-        quaternaryExpression qE=new quaternaryExpression();
+       /* quaternaryExpression qE=new quaternaryExpression();
         qE.init();
         qE.produceQE("PUSH(a)");
         qE.produceQE("PUSH(b)");
         qE.produceQE("ASSI(=)");
-        qE.show();
+        qE.show();*/
     }
 
 }

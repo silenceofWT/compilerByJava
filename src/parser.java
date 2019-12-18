@@ -245,7 +245,7 @@ public class parser {//进行语法和语义的分析
     }
 
     public static void main(String[] args) {
-        lexicalAnalyzer l = new lexicalAnalyzer();
+        /*lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
         lexicalAnalyzer.showTokens();
@@ -254,7 +254,7 @@ public class parser {//进行语法和语义的分析
 
         parser.analyzer();
 
-        qE.show();
+        qE.show();*/
 
     }
 

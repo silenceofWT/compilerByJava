@@ -18,8 +18,12 @@ public class lexicalAnalyzer {//词法分析器
 
     /*
     *词法分析器
+    * 方法说明：调用该函数直接进行词法分析
     */
-    public void CharToToken(List<String> text){//将字符数组扫描成Token
+    public void CharToToken(){//将字符数组扫描成Token
+        fileParseUtils.txtParse();//文件读取
+        List<String> text = new ArrayList<>();
+        text = fileParseUtils.charArr;
         fileParseUtils.clearInfoForFile(fileParseUtils.filePath);//一进来清空之前的内容
         char ch;//每次读取的字符
         for (int i = 0; i < text.size();) {
@@ -286,10 +290,10 @@ public class lexicalAnalyzer {//词法分析器
 
 
     public static void main(String[] args) {//主函数 测试
-        lexicalAnalyzer l = new lexicalAnalyzer();
+        /*lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
        // System.out.println(lexicalAnalyzer.TokenType.get(1));
-        showTokens();
+        showTokens();*/
     }
 }

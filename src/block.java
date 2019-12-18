@@ -64,19 +64,19 @@ public class block {
 
     public static void main(String[] args) {
 
-        //词法分析
+      /*  //词法分析
         lexicalAnalyzer l = new lexicalAnalyzer();
         fileParseUtils.txtParse();
         l.CharToToken(fileParseUtils.charArr);
         lexicalAnalyzer.showTokens();
-        /* quaternaryExpression qE=new quaternaryExpression();*/
+        *//* quaternaryExpression qE=new quaternaryExpression();*//*
         quaternaryExpression.init();
 
         parser.analyzer();
 
         quaternaryExpression.show();
 
-        quaternaryExpression.QtWriteFile();
+        quaternaryExpression.QtWriteFile();*/
 
        // block.divideBlock(quaternaryExpression.Qt.get(0).size());
     }

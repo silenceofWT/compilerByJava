@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TabbedPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TabbedPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextFileOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TextFileOpener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/userUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/quaternaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quaternaryExpression.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
       <recent name="F:\javaProject\compilerByJava\src\icon" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TabbedPane">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="compilerByJava" />
@@ -106,10 +109,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TabbedPane" />
         <item itemvalue="Application.userUI" />
         <item itemvalue="Application.quaternaryExpression" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.parser" />
       </list>
     </recent_temporary>
@@ -158,6 +161,8 @@
       <workItem from="1576630378639" duration="43000" />
       <workItem from="1576630453015" duration="436000" />
       <workItem from="1576635405595" duration="250000" />
+      <workItem from="1576640879767" duration="23000" />
+      <workItem from="1576642922788" duration="1103000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -299,22 +304,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576479901356" />
-    <state width="1493" height="316" key="GridCell.Tab.0.bottom" timestamp="1576635686894">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom" timestamp="1576644240322">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576635686894" />
-    <state width="1493" height="316" key="GridCell.Tab.0.center" timestamp="1576635686894">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
+    <state width="1493" height="316" key="GridCell.Tab.0.center" timestamp="1576644240322">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576635686894" />
-    <state width="1493" height="316" key="GridCell.Tab.0.left" timestamp="1576635686894">
+    <state width="1493" height="316" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
+    <state width="1493" height="316" key="GridCell.Tab.0.left" timestamp="1576644240322">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576635686894" />
-    <state width="1493" height="316" key="GridCell.Tab.0.right" timestamp="1576635686894">
+    <state width="1493" height="316" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right" timestamp="1576644240322">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576635686894" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
