@@ -11,12 +11,17 @@ import java.util.List;
 * 文件解析组件
 * 放置一些对txt文件进行操作的功能函数
 * */
+//王涛
 //"F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
 //"F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
+//"F:\\javaProject\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
+
 //"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\inputCode.txt"
-//"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\Tokens.txt"
+//"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\outputFile\\Tokens.txt"
+//"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\outputFile\\quaternaryExp.txt"
 //"C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\inputCode.txt"
 //"C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\outputFile\\Tokens.txt"
+//"C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\outputFile\\quaternaryExp.txt"
 public class fileParseUtils {//txt读取插件
 
     //inputCode文件的路径
