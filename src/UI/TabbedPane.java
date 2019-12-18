@@ -1,3 +1,5 @@
+package UI;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -10,10 +12,10 @@ public class TabbedPane extends JPanel{
         //新建选项卡1
         JTabbedPane tabbedPane=new JTabbedPane();
         //选项卡图标
-        ImageIcon icon1=createImageIcon("./icon/tab1.png");
-        ImageIcon icon2=createImageIcon("./icon/tab2.png");
-        ImageIcon icon3=createImageIcon("./icon/tab2.png");
-        ImageIcon icon4=createImageIcon("./icon/tab2.png");
+        ImageIcon icon1=createImageIcon("./../icon/tab1.png");
+        ImageIcon icon2=createImageIcon("./../icon/tab2.png");
+        ImageIcon icon3=createImageIcon("./../icon/tab2.png");
+        ImageIcon icon4=createImageIcon("./../icon/tab2.png");
         //选项卡2标题
         JComponent panel1=makeTextPanel("源码");
         //添加选项卡1

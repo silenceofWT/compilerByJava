@@ -1,3 +1,5 @@
+package UI;
+
 import javax.swing.*;
 
 public class TextFileOpener extends JFrame {
