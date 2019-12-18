@@ -122,11 +122,6 @@
       </set>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="700" />
-    <option name="width" value="1950" />
-    <option name="height" value="2075" />
-  </component>
   <component name="ProjectId" id="1UhqgoS9bQqjcvDlt7JKhOn0xVX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -198,16 +193,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.quaternaryExpression">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="compilerByJava" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="fileParseUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fileParseUtils" />
       <module name="compilerByJava" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -227,6 +215,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="quaternaryExpression" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="quaternaryExpression" />
+      <module name="compilerByJava" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="userUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="userUI" />
       <module name="compilerByJava" />
@@ -236,11 +231,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.quaternaryExpression" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.parser" />
         <item itemvalue="Application.userUI" />
         <item itemvalue="Application.lexicalAnalyzer" />
-        <item itemvalue="Application.fileParseUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -449,30 +444,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1576570055206" />
-    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576571538537">
+    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576635488088">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576571538537" />
+    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576635488088" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576479901356">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576479901356" />
-    <state width="1493" height="242" key="GridCell.Tab.0.bottom" timestamp="1576571615173">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom" timestamp="1576635503666">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576571615173" />
-    <state width="1493" height="242" key="GridCell.Tab.0.center" timestamp="1576571615173">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576635503666" />
+    <state width="1493" height="316" key="GridCell.Tab.0.center" timestamp="1576635503666">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576571615173" />
-    <state width="1493" height="242" key="GridCell.Tab.0.left" timestamp="1576571615173">
+    <state width="1493" height="316" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576635503666" />
+    <state width="1493" height="316" key="GridCell.Tab.0.left" timestamp="1576635503666">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576571615173" />
-    <state width="1493" height="242" key="GridCell.Tab.0.right" timestamp="1576571615173">
+    <state width="1493" height="316" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576635503666" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right" timestamp="1576635503666">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576571615173" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576635503666" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
