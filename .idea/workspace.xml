@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lexicalAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicalAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/quaternaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quaternaryExpression.java" afterDir="false" />
-    </list>
+    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +57,7 @@
       <recent name="F:\javaProject\compilerByJava\src\icon" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.userUI">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="compilerByJava" />
@@ -109,9 +101,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.userUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TabbedPane" />
-        <item itemvalue="Application.userUI" />
         <item itemvalue="Application.quaternaryExpression" />
         <item itemvalue="Application.parser" />
       </list>
@@ -162,7 +154,7 @@
       <workItem from="1576630453015" duration="436000" />
       <workItem from="1576635405595" duration="250000" />
       <workItem from="1576640879767" duration="23000" />
-      <workItem from="1576642922788" duration="1103000" />
+      <workItem from="1576642922788" duration="1472000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -234,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576635528562</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="对词法分析进行精简">
+      <created>1576644306481</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1576644306481</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +286,8 @@
     <MESSAGE value="整合分析器" />
     <MESSAGE value="新建四元式txt" />
     <MESSAGE value="11" />
-    <option name="LAST_COMMIT_MESSAGE" value="11" />
+    <MESSAGE value="对词法分析进行精简" />
+    <option name="LAST_COMMIT_MESSAGE" value="对词法分析进行精简" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576384787914" />
@@ -296,30 +296,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1576570055206" />
-    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576635527265">
+    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576644304045">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576635527265" />
+    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576644304045" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576479901356">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576479901356" />
-    <state width="1493" height="316" key="GridCell.Tab.0.bottom" timestamp="1576644240322">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom" timestamp="1576644427625">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
-    <state width="1493" height="316" key="GridCell.Tab.0.center" timestamp="1576644240322">
+    <state width="1493" height="316" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576644427625" />
+    <state width="1493" height="316" key="GridCell.Tab.0.center" timestamp="1576644427625">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
-    <state width="1493" height="316" key="GridCell.Tab.0.left" timestamp="1576644240322">
+    <state width="1493" height="316" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576644427625" />
+    <state width="1493" height="316" key="GridCell.Tab.0.left" timestamp="1576644427625">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
-    <state width="1493" height="316" key="GridCell.Tab.0.right" timestamp="1576644240322">
+    <state width="1493" height="316" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576644427625" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right" timestamp="1576644427625">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="316" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576644240322" />
+    <state width="1493" height="316" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576644427625" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -336,10 +336,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576635539298">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576644319088">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576635539298" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576644319088" />
     <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576510455019">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
