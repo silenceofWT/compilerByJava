@@ -5,6 +5,11 @@ public class parser {//进行语法和语义的分析
     public static Map<String,Map<String,String>>table= new HashMap<String,Map<String,String>>();
     public static List<String>Vn=new ArrayList<>();
     public static List<String>Vt=new ArrayList<>();
+    public static table tb=new table();//建立全局符号表
+
+    public static final int sizeofint = 1;
+    public static final int sizeoffloat = 2;
+    public static final int sizeofchar = 4;
 
     public static void iniTable()
     {
@@ -82,6 +87,11 @@ public class parser {//进行语法和语义的分析
         sq.push("程序");
         iniTable();
         int tag = 0;
+
+        int no_of_i=0;//记录符号表中填入的符号数
+        int type=-1;//暂存待填符号type
+        boolean flag_addi=false;//标示是否需要填符号表
+
         while (!sq.empty())
         {
             String b=lexicalAnalyzer.TokenType.get(tag);
@@ -89,6 +99,16 @@ public class parser {//进行语法和语义的分析
             {
                 b=lexicalAnalyzer.Tokens.get(tag);
             }
+
+            else if(b.equals("标识符")&&flag_addi)//若为标识符，则看是否需要填符号表
+            {
+                System.out.println("填符号表");
+                table.iinfor iinfor_new=tb.new iinfor(lexicalAnalyzer.Tokens.get(tag),type,"v",no_of_i);
+                tb.synbl.add(iinfor_new);
+                no_of_i++;
+                flag_addi=false;
+            }
+
             if (Vn.contains(sq.peek()) ) //非终结符号
             {
                 String a=sq.peek();
@@ -104,6 +124,28 @@ public class parser {//进行语法和语义的分析
                     sq.pop();
                     System.out.println(table.get(a).get(b));
                     String[] temp=table.get(a).get(b).split("<|>|\\[|]" );
+
+                    //填符号表相关操作
+                    if(table.get(a).get(b).equals("<int>"))
+                    {
+                        type=0;
+                        tb.lenl.add(sizeofint);
+                        flag_addi=true;
+                    }
+                    else if(table.get(a).get(b).equals("<float>"))
+                    {
+                        type=1;
+                        tb.lenl.add(sizeoffloat);
+                        flag_addi=true;
+                    }
+                    else if(table.get(a).get(b).equals("<char>"))
+                    {
+                        type=2;
+                        tb.lenl.add(sizeofchar);
+                        flag_addi=true;
+                    }
+                    //填符号表相关操作结束
+
                     for (int t = temp.length - 1; t > 0; t--)
                     {
                         if(temp[t].length()!=0)

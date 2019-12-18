@@ -3,7 +3,7 @@ import java.util.List;
 
 public class lexicalAnalyzer {//词法分析器
    public String[] k = { "program", "void", "if", "else", "while",
-           "for", "int", "char", "string", "break", "continue",
+           "for", "int", "char","float", "string", "break", "continue",
             "return","end","case","default" };// 关键字表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
