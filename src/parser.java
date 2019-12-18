@@ -217,8 +217,8 @@ public class parser {//进行语法和语义的分析
                 }
                 else if(temp[0].equals("GEQ"))
                 {
-                    quaternaryExpression.produceQE("GEQ("+lexicalAnalyzer.Tokens.get(tag-1)+")");
-                    System.out.println(tag+"|GEQ("+lexicalAnalyzer.Tokens.get(tag-1)+")|"+tag);
+                    quaternaryExpression.produceQE("GEQ("+temp[1]+")");
+                    System.out.println(tag+"|GEQ("+temp[1]+")|"+tag);
                     sq.pop();
                 }
                 else

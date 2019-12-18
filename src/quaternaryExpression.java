@@ -52,7 +52,7 @@ public class quaternaryExpression {//生成四元式
         }
         if(splitcommand[0].equals("GEQ"))
         {
-            Qt_0.add(splitcommand[0]);
+            Qt_0.add(splitcommand[1]);
             Qt_1.add(sem.peek());
             sem.pop();
             Qt_2.add(sem.peek());
