@@ -3,7 +3,7 @@ import java.util.List;
 
 public class lexicalAnalyzer {//词法分析器
    public String[] k = { "program", "void", "if", "else", "while",
-           "for", "int", "char","float", "string", "break", "continue",
+           "for", "int", "char", "string", "break", "continue",
             "return","end","case","default" };// 关键字表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
@@ -46,7 +46,7 @@ public class lexicalAnalyzer {//词法分析器
                         TokenType.add("k");
                         TokenNum.add((j+1));
                         System.out.println("{k," + (j+1) + "}");
-                        fileParseUtils.saveAsFileWriter("{k," + (j+1) + "}\n");
+                        fileParseUtils.saveAsFileWriter("{k," + (j+1) + "}\n",fileParseUtils.filePath);
                         tag = 1;
                     }
                 }
@@ -58,7 +58,7 @@ public class lexicalAnalyzer {//词法分析器
                     TokenType.add("标识符");
                     TokenNum.add((1));
                     System.out.println("{i," + 1 + '}');
-                    fileParseUtils.saveAsFileWriter("{i," + 1 + "}\n");
+                    fileParseUtils.saveAsFileWriter("{i," + 1 + "}\n",fileParseUtils.filePath);
                     tag = 1;
                 }
 
@@ -71,7 +71,7 @@ public class lexicalAnalyzer {//词法分析器
                             TokenType.add("标识符");
                             TokenNum.add((t+1));
                             System.out.println("{i," + (t+1) + '}');
-                            fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n");
+                            fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n",fileParseUtils.filePath);
                             break;
                         }
                         else {
@@ -83,7 +83,7 @@ public class lexicalAnalyzer {//词法分析器
                             int put = this.i.size() - 1;
                             TokenNum.add((put+1));
                             System.out.println("{i," + (put+1) + '}' );
-                            fileParseUtils.saveAsFileWriter("{i," + (put+1) +"}\n");
+                            fileParseUtils.saveAsFileWriter("{i," + (put+1) +"}\n",fileParseUtils.filePath);
                             break;
                         }
                     }
@@ -105,7 +105,7 @@ public class lexicalAnalyzer {//词法分析器
                     TokenNum.add((1));
                     this.c.add(strToken.toString());
                     System.out.println("{c," + 1 + '}');
-                    fileParseUtils.saveAsFileWriter("{c," + 1 + "}\n");
+                    fileParseUtils.saveAsFileWriter("{c," + 1 + "}\n",fileParseUtils.filePath);
                     tag = 1;
                 }
 
@@ -118,7 +118,7 @@ public class lexicalAnalyzer {//词法分析器
                             TokenType.add("常数");
                             TokenNum.add((t));
                             System.out.println( "{c, " + (t+1) + '}');
-                            fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n");
+                            fileParseUtils.saveAsFileWriter("{i," + (t+1) + "}\n",fileParseUtils.filePath);
 
                             break;
                         }
@@ -131,7 +131,7 @@ public class lexicalAnalyzer {//词法分析器
                             TokenType.add("常数");
                             TokenNum.add((put+1));
                             System.out.println("{c," + (put+1) + '}' );
-                            fileParseUtils.saveAsFileWriter("{i," + (put+1) + "}\n");
+                            fileParseUtils.saveAsFileWriter("{i," + (put+1) + "}\n",fileParseUtils.filePath);
 
                             break;
                         }
@@ -155,7 +155,7 @@ public class lexicalAnalyzer {//词法分析器
             TokenNum.add((1));
             this.C.add(strToken.toString());
             System.out.println( "{C," + 1 + '}');
-            fileParseUtils.saveAsFileWriter("{C," + 1 +"}\n");
+            fileParseUtils.saveAsFileWriter("{C," + 1 +"}\n",fileParseUtils.filePath);
             tag = 1;
         }
         if (this.C.size() != 0 && tag == 0) {
@@ -167,7 +167,7 @@ public class lexicalAnalyzer {//词法分析器
                     TokenNum.add((t+1));
                     tag = 1;
                     System.out.println("{C," + (t+1) + '}');
-                    fileParseUtils.saveAsFileWriter("{C," + (t+1) +"}\n");
+                    fileParseUtils.saveAsFileWriter("{C," + (t+1) +"}\n",fileParseUtils.filePath);
                     break;
                 }
                 else {
@@ -178,7 +178,7 @@ public class lexicalAnalyzer {//词法分析器
                     TokenType.add("字符");
                     TokenNum.add((put+1));
                     System.out.println("{C," + (put+1) + '}' );
-                    fileParseUtils.saveAsFileWriter("{C," + (put+1) +"}\n");
+                    fileParseUtils.saveAsFileWriter("{C," + (put+1) +"}\n",fileParseUtils.filePath);
                     break;
                 }
             }
@@ -201,7 +201,7 @@ public class lexicalAnalyzer {//词法分析器
                     TokenNum.add((1));
                     this.S.add(strToken.toString());
                     System.out.println("{S," + 1 + '}');
-                    fileParseUtils.saveAsFileWriter("{C," + 1 + "}\n");
+                    fileParseUtils.saveAsFileWriter("{C," + 1 + "}\n",fileParseUtils.filePath);
 
                         tag = 1;
                         }
@@ -214,7 +214,7 @@ public class lexicalAnalyzer {//词法分析器
             TokenNum.add((1));
           tag = 1;
             System.out.println("{S," + (t+1) + '}');
-            fileParseUtils.saveAsFileWriter("{S," + (t+1) + '}');
+            fileParseUtils.saveAsFileWriter("{S," + (t+1) + '}',fileParseUtils.filePath);
         break;
         }
         else {
@@ -225,7 +225,7 @@ public class lexicalAnalyzer {//词法分析器
             TokenType.add("S");
             TokenNum.add((put+1));
             System.out.println("{S," + (put+1) + '}' );
-            fileParseUtils.saveAsFileWriter("{S," + (put+1) + "}\n");
+            fileParseUtils.saveAsFileWriter("{S," + (put+1) + "}\n",fileParseUtils.filePath);
         break;
           }
         }
@@ -250,7 +250,7 @@ public class lexicalAnalyzer {//词法分析器
                         TokenType.add("p");
                         TokenNum.add((d+1));
                         System.out.println("{p," + (d+1) + '}');
-                        fileParseUtils.saveAsFileWriter("{p," + (d+1) + "}\n");
+                        fileParseUtils.saveAsFileWriter("{p," + (d+1) + "}\n",fileParseUtils.filePath);
                         i++;
                         tag = 1;
                         break;
@@ -260,7 +260,7 @@ public class lexicalAnalyzer {//词法分析器
                         TokenType.add("p");
                         TokenNum.add((d+1));
                         System.out.println("{p," + (d+1) + '}');
-                        fileParseUtils.saveAsFileWriter("{p," + (d+1) + "}\n");
+                        fileParseUtils.saveAsFileWriter("{p," + (d+1) + "}\n",fileParseUtils.filePath);
                         tag = 1;
                         break;
                     }

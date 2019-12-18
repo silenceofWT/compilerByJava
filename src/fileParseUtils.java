@@ -11,20 +11,14 @@ import java.util.List;
 * 文件解析组件
 * 放置一些对txt文件进行操作的功能函数
 * */
-//"F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
-//"F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
-//"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\inputCode.txt"
-//"C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\Tokens.txt"
-//"C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\inputFile\\inputCode.txt"
-//"C:\\Users\\Administrator\\Desktop\\编译器\\compilerByJava\\src\\outputFile\\Tokens.txt"
 public class fileParseUtils {//txt读取插件
 
     //inputCode文件的路径
-    public static final String fileName = "C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\inputCode.txt";
+    public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
     //存放txt中解析出来的字符
     public static List<String> charArr = new ArrayList<String>();
     //outputCode文件的路径
-    public static String filePath ="C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\Tokens.txt";
+    public static String filePath ="F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
 
     /*文件清空
     * 功能：清空txt文件的内容  参数：接受一个需要清空内容的txt文件的路径
@@ -46,11 +40,11 @@ public class fileParseUtils {//txt读取插件
     /*文件写入
     * 功能：将字符串写入txt文件 参数：接受一个要写入txt文件的字符串
     * */
-    public static void saveAsFileWriter(String content) {
+    public static void saveAsFileWriter(String content,String fPath) {
         FileWriter fWriter = null;
         try {
             // true表示不覆盖原来的内容，而是加到文件的后面。若要覆盖原来的内容，直接省略这个参数就好
-            fWriter = new FileWriter(filePath,true);
+            fWriter = new FileWriter(fPath,true);
             fWriter.write(content);
         } catch (IOException ex) {
             ex.printStackTrace();
