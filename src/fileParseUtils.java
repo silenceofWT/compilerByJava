@@ -25,11 +25,11 @@ import java.util.List;
 public class fileParseUtils {//txt读取插件
 
     //inputCode文件的路径
-    public static final String fileName = "F:\\javaProject\\compilerByJava\\src\\inputFile\\inputCode.txt";
+    public static final String fileName = "C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\inputFile\\inputCode.txt";
     //存放txt中解析出来的字符
     public static List<String> charArr = new ArrayList<String>();
     //outputCode文件的路径
-    public static String filePath ="F:\\javaProject\\compilerByJava\\src\\outputFile\\Tokens.txt";
+    public static String filePath ="C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\outputFile\\Tokens.txt";
 
     /*文件清空
     * 功能：清空txt文件的内容  参数：接受一个需要清空内容的txt文件的路径
