@@ -48,7 +48,22 @@ public class parser {//进行语法和语义的分析
         Map assignment_expression=new HashMap();
         assignment_expression.put("标识符","<标识符>[PUSH(标识符)]=<基本表达式>[ASSI(=)]");
         Map basic_expression=new HashMap();
-        basic_expression.put("标识符","<标识符>[PUSH(标识符)]");basic_expression.put("常数","<常数>[PUSH(常数)]");basic_expression.put("字符","<字符>[PUSH(字符)]");
+        basic_expression.put("标识符","<算术表达式>");basic_expression.put("常数","<算术表达式>");basic_expression.put("字符","<字符>[PUSH(字符)]");
+
+        Map arithmetic_expression=new HashMap();
+        arithmetic_expression.put("标识符","<算术表达式T><算术表达式X>");arithmetic_expression.put("常数","<算术表达式T><算术表达式X>");arithmetic_expression.put("(","<算术表达式T><算术表达式X>");
+        Map arithmetic_expressionX=new HashMap();
+        arithmetic_expressionX.put("+","<+><算术表达式T>[GEQ(+)]<算术表达式X>");arithmetic_expressionX.put("-","<-><算术表达式T>[GEQ(-)]<算术表达式X>");
+        arithmetic_expressionX.put(")","");arithmetic_expressionX.put(";","");
+        Map arithmetic_expressionT=new HashMap();
+        arithmetic_expressionT.put("标识符","<算术表达式F><算术表达式Y>");arithmetic_expressionT.put("常数","<算术表达式F><算术表达式Y>");arithmetic_expressionT.put("(","<算术表达式F><算术表达式Y>");
+        Map arithmetic_expressionY=new HashMap();
+        arithmetic_expressionY.put("*","<*><算术表达式F>[GEQ(*)]<算术表达式Y>");arithmetic_expressionY.put("/","</><算术表达式F>[GEQ(/)]<算术表达式Y>");
+        arithmetic_expressionY.put(")","");arithmetic_expressionY.put("+","");arithmetic_expressionY.put("-","");arithmetic_expressionY.put(";","");
+        Map arithmetic_expressionF=new HashMap();
+        arithmetic_expressionF.put("标识符","<终结符I>");arithmetic_expressionF.put("常数","<终结符I>");arithmetic_expressionF.put("(","(<算术表达式>)");
+        Map terminalI=new HashMap();
+        terminalI.put("标识符","<标识符>[PUSH(标识符)]");terminalI.put("常数","<常数>[PUSH(常数)]");
 
         table.put("程序",program);
         /*table.put("外部声明",external_declaration);
@@ -65,6 +80,12 @@ public class parser {//进行语法和语义的分析
         table.put("语句",statement);
         table.put("赋值表达式",assignment_expression);
         table.put("基本表达式",basic_expression);
+        table.put("算术表达式",arithmetic_expression);
+        table.put("算术表达式X",arithmetic_expressionX);
+        table.put("算术表达式T",arithmetic_expressionT);
+        table.put("算术表达式Y",arithmetic_expressionY);
+        table.put("算术表达式F",arithmetic_expressionF);
+        table.put("终结符I",terminalI);
 
         System.out.println();
         System.out.println(" Map Elements");
@@ -72,10 +93,12 @@ public class parser {//进行语法和语义的分析
 
         Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("program");Vt.add("int");Vt.add("float");
         Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");Vt.add("end");
+        Vt.add("+");Vt.add("-");Vt.add("*");Vt.add("/");
 
         Vn.add("程序");//Vn.add("外部声明");Vn.add("函数定义");Vn.add("函数返回值类型");Vn.add("函数声明");Vn.add("参数列表");Vn.add("参数声明");
         Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
         Vn.add("数据类型");Vn.add("语句列表");Vn.add("语句");Vn.add("赋值表达式");Vn.add("基本表达式");
+        Vn.add("算术表达式");Vn.add("算术表达式X");Vn.add("算术表达式T");Vn.add("算术表达式Y");Vn.add("算术表达式F");Vn.add("终结符I");
 
     }
 
@@ -146,7 +169,7 @@ public class parser {//进行语法和语义的分析
                     }
                     //填符号表相关操作结束
 
-                    for (int t = temp.length - 1; t > 0; t--)
+                    for (int t = temp.length - 1; t >= 0; t--)
                     {
                         if(temp[t].length()!=0)
                         {
@@ -190,6 +213,12 @@ public class parser {//进行语法和语义的分析
                 {
                     quaternaryExpression.produceQE("PUSH("+lexicalAnalyzer.Tokens.get(tag-1)+")");
                     System.out.println(tag+"|PUSH("+lexicalAnalyzer.Tokens.get(tag-1)+")|"+tag);
+                    sq.pop();
+                }
+                else if(temp[0].equals("GEQ"))
+                {
+                    quaternaryExpression.produceQE("GEQ("+lexicalAnalyzer.Tokens.get(tag-1)+")");
+                    System.out.println(tag+"|GEQ("+lexicalAnalyzer.Tokens.get(tag-1)+")|"+tag);
                     sq.pop();
                 }
                 else
