@@ -42,7 +42,7 @@ public class quaternaryExpression {//生成四元式
         {
             sem.push(splitcommand[1]);
         }
-        if(command.equals("ASSI(=)"))
+        else if(command.equals("ASSI(=)"))
         {
             Qt_0.add("=");
             Qt_1.add(sem.peek());
@@ -51,17 +51,32 @@ public class quaternaryExpression {//生成四元式
             Qt_3.add(sem.peek());
             sem.pop();
         }
-        if(splitcommand[0].equals("GEQ"))
+        else if(splitcommand[0].equals("GEQ")||splitcommand[0].equals("COMP"))
         {
             Qt_0.add(splitcommand[1]);
-            Qt_1.add(sem.peek());
-            sem.pop();
             Qt_2.add(sem.peek());
+            sem.pop();
+            Qt_1.add(sem.peek());
             sem.pop();
             Tn++;
             String temp="t"+Tn;
             sem.push(temp);
             Qt_3.add(temp);
+        }
+        else if(command.equals("IF(if)"))
+        {
+            Qt_0.add("if");
+            Qt_1.add(sem.peek());
+            sem.pop();
+            Qt_2.add("_");
+            Qt_3.add("_");
+        }
+        else if(command.equals("EL(el)")||command.equals("IE(ie)"))
+        {
+            Qt_0.add(splitcommand[1]);
+            Qt_1.add("_");
+            Qt_2.add("_");
+            Qt_3.add("_");
         }
     }
 

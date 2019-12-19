@@ -10,76 +10,81 @@ public class parser {//进行语法和语义的分析
     public static final int sizeofint = 1;
     public static final int sizeoffloat = 2;
     public static final int sizeofchar = 4;
+    public static final int sizeofbool = 1;
 
     public static void iniTable()
     {
 
         Map program=new HashMap();
-        program.put("program","<program>{<函数主体>}<end>");
-        /*Map external_declaration=new HashMap();
-        external_declaration.put("void","<函数定义>");external_declaration.put("char","<函数定义>");external_declaration.put("int","<函数定义>");external_declaration.put("float","<函数定义>");
-        Map function_definition=new HashMap();
-        function_definition.put("void","<函数返回值类型><函数声明>{<函数主体>}"); function_definition.put("char","<函数返回值类型><函数声明>{<函数主体>}");
-        function_definition.put("int","<函数返回值类型><函数声明>{<函数主体>}"); function_definition.put("float","<函数返回值类型><函数声明>{<函数主体>}");
-        Map type_specifier	=new HashMap();
-        type_specifier.put("void","<void>");type_specifier.put("char","<char>");type_specifier.put("int","<int>");type_specifier.put("float","<float>");
-        Map declaratory	=new HashMap();
-        declaratory.put("标识符","<标识符>(<参数列表>)");
-        Map parameter_list	=new HashMap();
-        parameter_list.put("char","<参数声明>，<参数列表>");parameter_list.put("int","<参数声明>，<参数列表>");parameter_list.put("float","<参数声明>，<参数列表>");
-        parameter_list.put(")","");
-        Map parameter_declaration	=new HashMap();
-        parameter_declaration.put("char","<数据类型><标识符>");parameter_declaration.put("int","<数据类型><标识符>");parameter_declaration.put("float","<数据类型><标识符>");
-        */
+        program.put("program","#program#{#函数主体#}#end#");
         Map function_body=new HashMap();
-        function_body.put("标识符","<变量声明列表><语句列表>");function_body.put("char","<变量声明列表><语句列表>");function_body.put("int","<变量声明列表><语句列表>");
-        function_body.put("float","<变量声明列表><语句列表>");function_body.put("}","<变量声明列表><语句列表>");
+        function_body.put("标识符","#变量声明列表##语句列表#");function_body.put("char","#变量声明列表##语句列表#");function_body.put("int","#变量声明列表##语句列表#");
+        function_body.put("float","#变量声明列表##语句列表#");function_body.put("bool","#变量声明列表##语句列表#");function_body.put("}","#变量声明列表##语句列表#");
+        function_body.put("if","#变量声明列表##语句列表#");
         Map variable_declaration_list=new HashMap();
         variable_declaration_list.put("标识符","");variable_declaration_list.put("}","");
-        variable_declaration_list.put("char","<变量声明><变量声明列表>");variable_declaration_list.put("int","<变量声明><变量声明列表>");variable_declaration_list.put("float","<变量声明><变量声明列表>");
+        variable_declaration_list.put("char","#变量声明##变量声明列表#");variable_declaration_list.put("int","#变量声明##变量声明列表#");variable_declaration_list.put("float","#变量声明##变量声明列表#");
+        variable_declaration_list.put("bool","#变量声明##变量声明列表#");variable_declaration_list.put("if","");
         Map variable_declaration=new HashMap();
-        variable_declaration.put("char","<数据类型><标识符>;");variable_declaration.put("int","<数据类型><标识符>;");variable_declaration.put("float","<数据类型><标识符>;");
+        variable_declaration.put("char","#数据类型##标识符#;");variable_declaration.put("int","#数据类型##标识符#;");variable_declaration.put("float","#数据类型##标识符#;");
+        variable_declaration.put("bool","#数据类型##标识符#;");
         Map data_type=new HashMap();
-        data_type.put("char","<char>");data_type.put("int","<int>");data_type.put("float","<float>");
+        data_type.put("char","#char#");data_type.put("int","#int#");
+        data_type.put("float","#float#");data_type.put("bool","#bool#");
         Map statement_list=new HashMap();
-        statement_list.put("}","");statement_list.put("标识符","<语句><语句列表>");
+        statement_list.put("}","");statement_list.put("标识符","#语句##语句列表#");statement_list.put("if","#语句##语句列表#");
         Map statement=new HashMap();
-        statement.put("标识符","<赋值表达式>;");
-        Map assignment_expression=new HashMap();
-        assignment_expression.put("标识符","<标识符>[PUSH(标识符)]=<基本表达式>[ASSI(=)]");
+        statement.put("标识符","#赋值语句#;");statement.put("if","#if_else语句#");
+        Map assignment_statement=new HashMap();
+        assignment_statement.put("标识符","#标识符#[PUSH(标识符)]=#基本表达式#[ASSI(=)]");
         Map basic_expression=new HashMap();
-        basic_expression.put("标识符","<算术表达式>");basic_expression.put("常数","<算术表达式>");basic_expression.put("字符","<字符>[PUSH(字符)]");
+        basic_expression.put("标识符","#算术表达式#");basic_expression.put("常数","#算术表达式#");basic_expression.put("字符","#字符#[PUSH(字符)]");
+        basic_expression.put("true","#true#[PUSH(true)]");basic_expression.put("false","#false#[PUSH(false)]");
+
+
+        Map if_else_statement=new HashMap();
+        if_else_statement.put("if","#if##(##比较表达式##)#[IF(if)]#{##语句列表##}##else#[EL(el)]#{##语句列表##}#[IE(ie)]");
+        Map compare_expression=new HashMap();
+        compare_expression.put("标识符","#比较项##比较符号##比较项#[COMP(OP)]");compare_expression.put("常数","#比较项##比较符号##比较项#[COMP(OP)]");
+        compare_expression.put("字符","#比较项##比较符号##比较项#[COMP(OP)]");compare_expression.put("(","#比较项##比较符号##比较项#[COMP(OP)]");
+        Map compare_item=new HashMap();
+        compare_item.put("标识符","#算术表达式#");compare_item.put("常数","#算术表达式#");compare_item.put("(","#算术表达式#");
+        compare_item.put("字符","#字符#[PUSH(字符)]");
+        Map compare_character=new HashMap();
+        compare_character.put(">","#>#");compare_character.put("<","#<#");compare_character.put("==","#==#");
+        compare_character.put(">=","#>=#");compare_character.put("!=","#!=#");compare_character.put("<=","#<=#");
 
         Map arithmetic_expression=new HashMap();
-        arithmetic_expression.put("标识符","<算术表达式T><算术表达式X>");arithmetic_expression.put("常数","<算术表达式T><算术表达式X>");arithmetic_expression.put("(","<算术表达式T><算术表达式X>");
+        arithmetic_expression.put("标识符","#算术表达式T##算术表达式X#");arithmetic_expression.put("常数","#算术表达式T##算术表达式X#");arithmetic_expression.put("(","#算术表达式T##算术表达式X#");
         Map arithmetic_expressionX=new HashMap();
-        arithmetic_expressionX.put("+","<+><算术表达式T>[GEQ(+)]<算术表达式X>");arithmetic_expressionX.put("-","<-><算术表达式T>[GEQ(-)]<算术表达式X>");
-        arithmetic_expressionX.put(")","");arithmetic_expressionX.put(";","");
+        arithmetic_expressionX.put("+","#+##算术表达式T#[GEQ(+)]#算术表达式X#");arithmetic_expressionX.put("-","#-##算术表达式T#[GEQ(-)]#算术表达式X#");
+        arithmetic_expressionX.put(")","");arithmetic_expressionX.put(";","");arithmetic_expressionX.put(">","");arithmetic_expressionX.put("<","");
+        arithmetic_expressionX.put("==","");arithmetic_expressionX.put("<=","");arithmetic_expressionX.put("<=","");arithmetic_expressionX.put("!=","");
         Map arithmetic_expressionT=new HashMap();
-        arithmetic_expressionT.put("标识符","<算术表达式F><算术表达式Y>");arithmetic_expressionT.put("常数","<算术表达式F><算术表达式Y>");arithmetic_expressionT.put("(","<算术表达式F><算术表达式Y>");
+        arithmetic_expressionT.put("标识符","#算术表达式F##算术表达式Y#");arithmetic_expressionT.put("常数","#算术表达式F##算术表达式Y#");arithmetic_expressionT.put("(","#算术表达式F##算术表达式Y#");
         Map arithmetic_expressionY=new HashMap();
-        arithmetic_expressionY.put("*","<*><算术表达式F>[GEQ(*)]<算术表达式Y>");arithmetic_expressionY.put("/","</><算术表达式F>[GEQ(/)]<算术表达式Y>");
+        arithmetic_expressionY.put("*","#*##算术表达式F#[GEQ(*)]#算术表达式Y#");arithmetic_expressionY.put("/","#/##算术表达式F#[GEQ(/)]#算术表达式Y#");
         arithmetic_expressionY.put(")","");arithmetic_expressionY.put("+","");arithmetic_expressionY.put("-","");arithmetic_expressionY.put(";","");
+        arithmetic_expressionY.put(">","");arithmetic_expressionY.put("<","");arithmetic_expressionY.put("==","");
+        arithmetic_expressionY.put(">=","");arithmetic_expressionY.put("<=","");arithmetic_expressionY.put("!=","");
         Map arithmetic_expressionF=new HashMap();
-        arithmetic_expressionF.put("标识符","<终结符I>");arithmetic_expressionF.put("常数","<终结符I>");arithmetic_expressionF.put("(","(<算术表达式>)");
+        arithmetic_expressionF.put("标识符","#终结符I#");arithmetic_expressionF.put("常数","#终结符I#");arithmetic_expressionF.put("(","(#算术表达式#)");
         Map terminalI=new HashMap();
-        terminalI.put("标识符","<标识符>[PUSH(标识符)]");terminalI.put("常数","<常数>[PUSH(常数)]");
+        terminalI.put("标识符","#标识符#[PUSH(标识符)]");terminalI.put("常数","#常数#[PUSH(常数)]");
 
         table.put("程序",program);
-        /*table.put("外部声明",external_declaration);
-        table.put("函数定义",function_definition);
-        table.put("函数返回值类型",type_specifier);
-        table.put("函数声明",declaratory);
-        table.put("参数列表",parameter_list);
-        table.put("参数声明",parameter_declaration);*/
         table.put("函数主体",function_body);
         table.put("变量声明列表",variable_declaration_list);
         table.put("变量声明",variable_declaration);
         table.put("数据类型",data_type);
         table.put("语句列表",statement_list);
         table.put("语句",statement);
-        table.put("赋值表达式",assignment_expression);
+        table.put("赋值语句",assignment_statement);
         table.put("基本表达式",basic_expression);
+        table.put("if_else语句",if_else_statement);
+        table.put("比较表达式",compare_expression);
+        table.put("比较项",compare_item);
+        table.put("比较符号",compare_character);
         table.put("算术表达式",arithmetic_expression);
         table.put("算术表达式X",arithmetic_expressionX);
         table.put("算术表达式T",arithmetic_expressionT);
@@ -92,21 +97,22 @@ public class parser {//进行语法和语义的分析
         System.out.println("\t" + table);
 
         Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("program");Vt.add("int");Vt.add("float");
-        Vt.add("char");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");Vt.add("end");
-        Vt.add("+");Vt.add("-");Vt.add("*");Vt.add("/");
+        Vt.add("char");Vt.add("bool");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");
+        Vt.add("+");Vt.add("-");Vt.add("*");Vt.add("/");Vt.add("if");Vt.add("else");Vt.add(">");Vt.add("==");
+        Vt.add("end");Vt.add("<");Vt.add(">=");Vt.add("!=");Vt.add("<=");Vt.add("true");Vt.add("false");
 
-        Vn.add("程序");//Vn.add("外部声明");Vn.add("函数定义");Vn.add("函数返回值类型");Vn.add("函数声明");Vn.add("参数列表");Vn.add("参数声明");
+        Vn.add("程序");
         Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
-        Vn.add("数据类型");Vn.add("语句列表");Vn.add("语句");Vn.add("赋值表达式");Vn.add("基本表达式");
-        Vn.add("算术表达式");Vn.add("算术表达式X");Vn.add("算术表达式T");Vn.add("算术表达式Y");Vn.add("算术表达式F");Vn.add("终结符I");
+        Vn.add("数据类型");Vn.add("语句列表");Vn.add("语句");Vn.add("赋值语句");Vn.add("基本表达式");
+        Vn.add("if_else语句");Vn.add("比较表达式");Vn.add("比较项");Vn.add("比较符号");
+        Vn.add("算术表达式");Vn.add("算术表达式X");Vn.add("算术表达式T");Vn.add("算术表达式Y");Vn.add("算术表达式F");
+        Vn.add("终结符I");
 
     }
 
     public static void analyzer()
     {
         Stack<String>sq=new Stack<>();//分析栈
-        //stack<String>SEM;//语义栈
-        //sq.push("#");
         sq.push("程序");
         iniTable();
         int tag = 0;
@@ -139,6 +145,7 @@ public class parser {//进行语法和语义的分析
                 {
                     if(table.get(a).get(b)==null)
                     {
+                        System.out.println(a+b);
                         System.out.println("没有可以匹配的规则，不能识别！出错！");
                         return ;
                     }
@@ -146,25 +153,31 @@ public class parser {//进行语法和语义的分析
                     System.out.println(b+" input");
                     sq.pop();
                     System.out.println(table.get(a).get(b));
-                    String[] temp=table.get(a).get(b).split("<|>|\\[|]" );
+                    String[] temp=table.get(a).get(b).split("#|\\[|]" );
 
                     //填符号表相关操作
-                    if(table.get(a).get(b).equals("<int>"))
+                    if(table.get(a).get(b).equals("#int#"))
                     {
                         type=0;
                         tb.lenl.add(sizeofint);
                         flag_addi=true;
                     }
-                    else if(table.get(a).get(b).equals("<float>"))
+                    else if(table.get(a).get(b).equals("#float#"))
                     {
                         type=1;
                         tb.lenl.add(sizeoffloat);
                         flag_addi=true;
                     }
-                    else if(table.get(a).get(b).equals("<char>"))
+                    else if(table.get(a).get(b).equals("#char#"))
                     {
                         type=2;
                         tb.lenl.add(sizeofchar);
+                        flag_addi=true;
+                    }
+                    else if(table.get(a).get(b).equals("#bool#"))
+                    {
+                        type=3;
+                        tb.lenl.add(sizeofbool);
                         flag_addi=true;
                     }
                     //填符号表相关操作结束
@@ -195,7 +208,7 @@ public class parser {//进行语法和语义的分析
                 }
                 else
                 {
-                    System.out.println("不能识别"+sq.peek()+"！出错！");
+                    System.out.println("不能识别"+sq.peek()+b+"！出错！");
                     return ;
                 }
             }
@@ -203,7 +216,7 @@ public class parser {//进行语法和语义的分析
             {
                 System.out.println("动作符号aa|"+sq.peek()+"|aa");
                 String[] temp=sq.peek().split("\\(|\\)");
-                if(temp[0].equals("ASSI"))
+                if(temp[0].equals("ASSI")||temp[0].equals("IF")||temp[0].equals("EL")||temp[0].equals("IE"))
                 {
                     quaternaryExpression.produceQE(sq.peek());
                     System.out.println(sq.peek());
@@ -219,6 +232,22 @@ public class parser {//进行语法和语义的分析
                 {
                     quaternaryExpression.produceQE("GEQ("+temp[1]+")");
                     System.out.println(tag+"|GEQ("+temp[1]+")|"+tag);
+                    sq.pop();
+                }
+                else if(temp[0].equals("COMP"))
+                {
+                    String OP;
+                    for(int j=tag;;j--)//向前查找最近的比较符
+                    {
+                        if(lexicalAnalyzer.Tokens.get(j-1).equals(">")||lexicalAnalyzer.Tokens.get(j-1).equals("<")||lexicalAnalyzer.Tokens.get(j-1).equals("==")||
+                                lexicalAnalyzer.Tokens.get(j-1).equals(">=")||lexicalAnalyzer.Tokens.get(j-1).equals("<=")||lexicalAnalyzer.Tokens.get(j-1).equals("!="))
+                        {
+                            OP=lexicalAnalyzer.Tokens.get(j-1);
+                            break;
+                        }
+                    }
+                    quaternaryExpression.produceQE("COMP("+OP+")");
+                    System.out.println(tag+"|COMP("+OP+")|"+tag);
                     sq.pop();
                 }
                 else

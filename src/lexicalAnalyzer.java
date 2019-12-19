@@ -3,8 +3,8 @@ import java.util.List;
 
 public class lexicalAnalyzer {//词法分析器
    public String[] k = { "program", "void", "if", "else", "while",
-           "for", "int", "char", "string", "break", "continue",
-            "return","end","case","default" };// 关键字表
+           "for", "int", "char", "string","bool","float", "break", "continue",
+            "return","end","true","false" };// 关键字表
    public  String[] p = {"<=",">=","==","=",">","<","&&","||",
         "+","-","*","/","{","}",
         ";","(",")",",","[","]"};//界符表

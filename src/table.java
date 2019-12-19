@@ -26,7 +26,7 @@ public class table {
 
 
     public class type{//类型表成员
-        char tval;//类型代码:i(int)、f(float)、c(char)
+        char tval;//类型代码:i(int)、f(float)、c(char)、b(bool)
         int tpoint;//根据tval，指向null/数组表（暂无）/结构表（暂无）的某一项,-1代表空指针
 
         type(char tva,int tpt)//构造函数
@@ -51,6 +51,7 @@ public class table {
         typel.add(new type('i',-1));//类型表新增项：int,空指针
         typel.add(new type('f',-1));//类型表新增项：float,空指针
         typel.add(new type('c',-1));//类型表新增项：char,空指针
+        typel.add(new type('b',-1));//类型表新增项：bool,空指针
     }
 
     public void show()
