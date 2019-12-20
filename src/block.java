@@ -36,19 +36,19 @@ public class block {
             //遍历四元式序列 Qt.get(0).size()为四元式的数量  找出所有入口标号
             //i+1相当于四元式的标号
             if (i == 0){//如果为第一个四元式 那么添加进blockList的入口标号中
-                inNum.add(i+1);
+                inNum.add(i);
             }else if(Qt.get(0).get(i).equals("if")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
-                inNum.add(i + 2);
-            }else if(Qt.get(0).get(i).equals("wh")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
                 inNum.add(i + 1);
+            }else if(Qt.get(0).get(i).equals("wh")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
+                inNum.add(i);
             }else if(Qt.get(0).get(i).equals("ie")){
-                inNum.add(i+1);
+                inNum.add(i);
             }else if(Qt.get(0).get(i).equals("we")){
-                inNum.add(i+1);
+                inNum.add(i);
             }else if(Qt.get(0).get(i).equals("el")){
-                inNum.add(i + 2);
+                inNum.add(i + 1);
             }else if(Qt.get(0).get(i).equals("do")){
-                inNum.add(i+2);
+                inNum.add(i+1);
             }
         }
         for(int i = 0;i < inNum.size();i++){
