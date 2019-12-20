@@ -5,7 +5,7 @@ public class lexicalAnalyzer {//词法分析器
    public String[] k = { "program", "void", "if", "else", "while",
            "for", "int", "char", "string","bool","float", "break", "continue",
             "return","end","true","false" };// 关键字表
-   public  String[] p = {"<=",">=","==","=",">","<","&&","||",
+   public  String[] p = {"<=",">=","==","=","!=",">","<","&&","||",
         "+","-","*","/","{","}",
         ";","(",")",",","[","]"};//界符表
    public List<String> i = new ArrayList<String>();// 变量名
@@ -237,7 +237,7 @@ public class lexicalAnalyzer {//词法分析器
            }
             else if((ch >= '!' && ch <= '/')||(ch >= ':' && ch <= '@')|| (ch >= '['&&ch<='`')|| (ch>='{')&&(ch<='}')){
              //界符
-                while(String.valueOf(ch).equals(">")||String.valueOf(ch).equals("=")||String.valueOf(ch).equals("<")){
+                while(String.valueOf(ch).equals(">")||String.valueOf(ch).equals("=")||String.valueOf(ch).equals("<")||String.valueOf(ch).equals("!")){
                     //System.out.println(1);
                     strToken.append(ch);
                     i++;
