@@ -16,6 +16,7 @@ while(a==1){
         c = false;
      }else{
        a = a + 1;
+       b = b + 2;
      }
 
 }
