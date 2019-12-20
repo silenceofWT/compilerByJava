@@ -14,8 +14,9 @@ public class TabbedPane extends JPanel{
         //选项卡图标
         ImageIcon icon1=createImageIcon("./../icon/tab1.png");
         ImageIcon icon2=createImageIcon("./../icon/tab2.png");
-        ImageIcon icon3=createImageIcon("./../icon/tab2.png");
-        ImageIcon icon4=createImageIcon("./../icon/tab2.png");
+        ImageIcon icon3=createImageIcon("./../icon/tab3.png");
+        ImageIcon icon4=createImageIcon("./../icon/tab4.png");
+        ImageIcon icon5=createImageIcon("./../icon/tab5.png");
         //选项卡2标题
         JComponent panel1=makeTextPanel("源码");
         //添加选项卡1
@@ -31,13 +32,16 @@ public class TabbedPane extends JPanel{
         tabbedPane.setMnemonicAt(1,KeyEvent.VK_2);
 
 
-        JComponent panel3=makeTextPanel("高级");
-        tabbedPane.addTab("高级",icon3,panel3,"Still does nothing");
+        JComponent panel3=makeTextPanel("四元式序列");
+        tabbedPane.addTab("四元式序列",icon3,panel3,"Still does nothing");
         tabbedPane.setMnemonicAt(2,KeyEvent.VK_3);
-        JComponent panel4=makeTextPanel("系统保护");
+        JComponent panel4=makeTextPanel("优化的四元式序列");
         panel4.setPreferredSize(new Dimension(410,50));
-        tabbedPane.addTab("系统保护",icon4,panel4,"Does nothing at all");
+        tabbedPane.addTab("优化的四元式序列",icon4,panel4,"Does nothing at all");
         tabbedPane.setMnemonicAt(3,KeyEvent.VK_4);
+        JComponent panel5=makeTextPanel("四元式序列");
+        tabbedPane.addTab("四元式序列",icon5,panel5,"Still does nothing");
+        tabbedPane.setMnemonicAt(2,KeyEvent.VK_5);
         add(tabbedPane);
     }
     protected JComponent makeTextPanel(String text)

@@ -9,16 +9,18 @@ program
   b = 4;
 
 
-   while(a>=3){
 
+while(a==1){
      if(b >= 3)
      {
         c = false;
-     }else{}
+     }else{
+       a = a + 1;
+     }
+
+}
 
 
-
-   }
 
 }
 end
