@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/designFile/LL(1)分析表 (1).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/designFile/~$文法设计.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/designFile/文法设计.docx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/designFile/文法设计.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/quaternaryExp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/quaternaryExp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputFile/inputCode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outputFile/quaternaryExp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/quaternaryExp.txt" afterDir="false" />
-    </list>
+    <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +170,7 @@
       <workItem from="1576681193628" duration="132000" />
       <workItem from="1576716132862" duration="6057000" />
       <workItem from="1576759101947" duration="7262000" />
-      <workItem from="1576822552606" duration="869000" />
+      <workItem from="1576822552606" duration="892000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -274,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576823147487</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="while检验成功">
+      <created>1576823442134</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576823442134</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +326,8 @@
     <MESSAGE value="对词法分析进行精简" />
     <MESSAGE value="while循环" />
     <MESSAGE value="完善设计文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善设计文件" />
+    <MESSAGE value="while检验成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="while检验成功" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576384787914" />
@@ -339,30 +336,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1576570055206" />
-    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576823145581">
+    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576823439968">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576823145581" />
+    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576823439968" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576479901356">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576479901356" />
-    <state width="1493" height="344" key="GridCell.Tab.0.bottom" timestamp="1576823375704">
+    <state width="1493" height="344" key="GridCell.Tab.0.bottom" timestamp="1576823447070">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576823375704" />
-    <state width="1493" height="344" key="GridCell.Tab.0.center" timestamp="1576823375703">
+    <state width="1493" height="344" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576823447070" />
+    <state width="1493" height="344" key="GridCell.Tab.0.center" timestamp="1576823447069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576823375703" />
-    <state width="1493" height="344" key="GridCell.Tab.0.left" timestamp="1576823375703">
+    <state width="1493" height="344" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576823447069" />
+    <state width="1493" height="344" key="GridCell.Tab.0.left" timestamp="1576823447069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576823375703" />
-    <state width="1493" height="344" key="GridCell.Tab.0.right" timestamp="1576823375703">
+    <state width="1493" height="344" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576823447069" />
+    <state width="1493" height="344" key="GridCell.Tab.0.right" timestamp="1576823447070">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576823375703" />
+    <state width="1493" height="344" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576823447070" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1576568946912">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
