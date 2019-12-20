@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aad0903-e45f-4722-a05b-1d4e98873629" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/designFile/LL(1)分析表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/inputFile/inputCode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileParseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileParseUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inputFile/inputCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputFile/inputCode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outputFile/Tokens.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/Tokens.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outputFile/quaternaryExp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/outputFile/quaternaryExp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/quaternaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/quaternaryExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/fileParseUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/fileParseUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/lexicalAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/quaternaryExp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/compilerByJava/outputFile/quaternaryExp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designFile/LL(1)分析表 (1).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designFile/~$文法设计.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designFile/文法设计.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/designFile/文法设计.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +179,7 @@
       <workItem from="1576681193628" duration="132000" />
       <workItem from="1576716132862" duration="6057000" />
       <workItem from="1576759101947" duration="7262000" />
-      <workItem from="1576822552606" duration="292000" />
+      <workItem from="1576822552606" duration="581000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1575821241000</created>
@@ -259,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576644306481</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="while循环">
+      <created>1576822931501</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576822931501</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +319,8 @@
     <MESSAGE value="新建四元式txt" />
     <MESSAGE value="11" />
     <MESSAGE value="对词法分析进行精简" />
-    <option name="LAST_COMMIT_MESSAGE" value="对词法分析进行精简" />
+    <MESSAGE value="while循环" />
+    <option name="LAST_COMMIT_MESSAGE" value="while循环" />
   </component>
   <component name="WindowStateProjectService">
     <state x="513" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576384787914" />
@@ -322,10 +329,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1576570055206" />
-    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576644304045">
+    <state x="372" y="18" key="CommitChangelistDialog2" timestamp="1576822929565">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576644304045" />
+    <state x="372" y="18" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576822929565" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576479901356">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -362,10 +369,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576568946912" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576644319088">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1576822940805">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576644319088" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1576822940805" />
     <state x="562" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576510455019">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
