@@ -2,7 +2,7 @@ import java.util.*;
 
 public class parser {//进行语法和语义的分析
 
-    public static Map<String,Map<String,String>>table= new HashMap<String,Map<String,String>>();
+    public static Map<String,Map<String,String>>table= new HashMap<>();
     public static List<String>Vn=new ArrayList<>();
     public static List<String>Vt=new ArrayList<>();
     public static table tb=new table();//建立全局符号表
@@ -15,61 +15,64 @@ public class parser {//进行语法和语义的分析
     public static void iniTable()
     {
 
-        Map program=new HashMap();
+        Map<String,String> program=new HashMap<>();
         program.put("program","#program#{#函数主体#}#end#");
-        Map function_body=new HashMap();
+        Map<String,String> function_body=new HashMap<>();
         function_body.put("标识符","#变量声明列表##语句列表#");function_body.put("char","#变量声明列表##语句列表#");function_body.put("int","#变量声明列表##语句列表#");
         function_body.put("float","#变量声明列表##语句列表#");function_body.put("bool","#变量声明列表##语句列表#");function_body.put("}","#变量声明列表##语句列表#");
-        function_body.put("if","#变量声明列表##语句列表#");
-        Map variable_declaration_list=new HashMap();
+        function_body.put("if","#变量声明列表##语句列表#");function_body.put("while","#变量声明列表##语句列表#");
+        Map<String,String> variable_declaration_list=new HashMap<>();
         variable_declaration_list.put("标识符","");variable_declaration_list.put("}","");
         variable_declaration_list.put("char","#变量声明##变量声明列表#");variable_declaration_list.put("int","#变量声明##变量声明列表#");variable_declaration_list.put("float","#变量声明##变量声明列表#");
-        variable_declaration_list.put("bool","#变量声明##变量声明列表#");variable_declaration_list.put("if","");
-        Map variable_declaration=new HashMap();
+        variable_declaration_list.put("bool","#变量声明##变量声明列表#");variable_declaration_list.put("if","");variable_declaration_list.put("while","");
+        Map<String,String> variable_declaration=new HashMap<>();
         variable_declaration.put("char","#数据类型##标识符#;");variable_declaration.put("int","#数据类型##标识符#;");variable_declaration.put("float","#数据类型##标识符#;");
         variable_declaration.put("bool","#数据类型##标识符#;");
-        Map data_type=new HashMap();
+        Map<String,String> data_type=new HashMap<>();
         data_type.put("char","#char#");data_type.put("int","#int#");
         data_type.put("float","#float#");data_type.put("bool","#bool#");
-        Map statement_list=new HashMap();
-        statement_list.put("}","");statement_list.put("标识符","#语句##语句列表#");statement_list.put("if","#语句##语句列表#");
-        Map statement=new HashMap();
-        statement.put("标识符","#赋值语句#;");statement.put("if","#if_else语句#");
-        Map assignment_statement=new HashMap();
+        Map<String,String> statement_list=new HashMap<>();
+        statement_list.put("}","");statement_list.put("标识符","#语句##语句列表#");statement_list.put("if","#语句##语句列表#");statement_list.put("while","#语句##语句列表#");
+        Map<String,String> statement=new HashMap<>();
+        statement.put("标识符","#赋值语句#;");statement.put("if","#if_else语句#");statement.put("while","#while语句#");
+        Map<String,String> assignment_statement=new HashMap<>();
         assignment_statement.put("标识符","#标识符#[PUSH(标识符)]=#基本表达式#[ASSI(=)]");
-        Map basic_expression=new HashMap();
+        Map<String,String> basic_expression=new HashMap<>();
         basic_expression.put("标识符","#算术表达式#");basic_expression.put("常数","#算术表达式#");basic_expression.put("字符","#字符#[PUSH(字符)]");
         basic_expression.put("true","#true#[PUSH(true)]");basic_expression.put("false","#false#[PUSH(false)]");
 
-
-        Map if_else_statement=new HashMap();
+        //while循环
+        Map<String,String> while_statement = new HashMap<>();
+        while_statement.put("while","#while#[WH()]#(##比较表达式##)#[DO(do)]#{##语句列表##}#[WE(we)]");
+        //if_else
+        Map<String,String> if_else_statement=new HashMap<>();
         if_else_statement.put("if","#if##(##比较表达式##)#[IF(if)]#{##语句列表##}##else#[EL(el)]#{##语句列表##}#[IE(ie)]");
-        Map compare_expression=new HashMap();
+        Map<String,String> compare_expression=new HashMap<>();
         compare_expression.put("标识符","#比较项##比较符号##比较项#[COMP(OP)]");compare_expression.put("常数","#比较项##比较符号##比较项#[COMP(OP)]");
         compare_expression.put("字符","#比较项##比较符号##比较项#[COMP(OP)]");compare_expression.put("(","#比较项##比较符号##比较项#[COMP(OP)]");
-        Map compare_item=new HashMap();
+        Map<String,String> compare_item=new HashMap<>();
         compare_item.put("标识符","#算术表达式#");compare_item.put("常数","#算术表达式#");compare_item.put("(","#算术表达式#");
         compare_item.put("字符","#字符#[PUSH(字符)]");
-        Map compare_character=new HashMap();
+        Map<String,String> compare_character=new HashMap<>();
         compare_character.put(">","#>#");compare_character.put("<","#<#");compare_character.put("==","#==#");
         compare_character.put(">=","#>=#");compare_character.put("!=","#!=#");compare_character.put("<=","#<=#");
 
-        Map arithmetic_expression=new HashMap();
+        Map<String,String> arithmetic_expression=new HashMap<>();
         arithmetic_expression.put("标识符","#算术表达式T##算术表达式X#");arithmetic_expression.put("常数","#算术表达式T##算术表达式X#");arithmetic_expression.put("(","#算术表达式T##算术表达式X#");
-        Map arithmetic_expressionX=new HashMap();
+        Map<String,String> arithmetic_expressionX=new HashMap<>();
         arithmetic_expressionX.put("+","#+##算术表达式T#[GEQ(+)]#算术表达式X#");arithmetic_expressionX.put("-","#-##算术表达式T#[GEQ(-)]#算术表达式X#");
         arithmetic_expressionX.put(")","");arithmetic_expressionX.put(";","");arithmetic_expressionX.put(">","");arithmetic_expressionX.put("<","");
-        arithmetic_expressionX.put("==","");arithmetic_expressionX.put("<=","");arithmetic_expressionX.put("<=","");arithmetic_expressionX.put("!=","");
-        Map arithmetic_expressionT=new HashMap();
+        arithmetic_expressionX.put("==","");arithmetic_expressionX.put(">=","");arithmetic_expressionX.put("<=","");arithmetic_expressionX.put("!=","");
+        Map<String,String> arithmetic_expressionT=new HashMap<>();
         arithmetic_expressionT.put("标识符","#算术表达式F##算术表达式Y#");arithmetic_expressionT.put("常数","#算术表达式F##算术表达式Y#");arithmetic_expressionT.put("(","#算术表达式F##算术表达式Y#");
-        Map arithmetic_expressionY=new HashMap();
+        Map<String,String> arithmetic_expressionY=new HashMap<>();
         arithmetic_expressionY.put("*","#*##算术表达式F#[GEQ(*)]#算术表达式Y#");arithmetic_expressionY.put("/","#/##算术表达式F#[GEQ(/)]#算术表达式Y#");
         arithmetic_expressionY.put(")","");arithmetic_expressionY.put("+","");arithmetic_expressionY.put("-","");arithmetic_expressionY.put(";","");
         arithmetic_expressionY.put(">","");arithmetic_expressionY.put("<","");arithmetic_expressionY.put("==","");
         arithmetic_expressionY.put(">=","");arithmetic_expressionY.put("<=","");arithmetic_expressionY.put("!=","");
-        Map arithmetic_expressionF=new HashMap();
+        Map<String,String> arithmetic_expressionF=new HashMap<>();
         arithmetic_expressionF.put("标识符","#终结符I#");arithmetic_expressionF.put("常数","#终结符I#");arithmetic_expressionF.put("(","(#算术表达式#)");
-        Map terminalI=new HashMap();
+        Map<String,String> terminalI=new HashMap<>();
         terminalI.put("标识符","#标识符#[PUSH(标识符)]");terminalI.put("常数","#常数#[PUSH(常数)]");
 
         table.put("程序",program);
@@ -82,6 +85,7 @@ public class parser {//进行语法和语义的分析
         table.put("赋值语句",assignment_statement);
         table.put("基本表达式",basic_expression);
         table.put("if_else语句",if_else_statement);
+        table.put("while语句",while_statement);//while语句
         table.put("比较表达式",compare_expression);
         table.put("比较项",compare_item);
         table.put("比较符号",compare_character);
@@ -98,13 +102,13 @@ public class parser {//进行语法和语义的分析
 
         Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("program");Vt.add("int");Vt.add("float");
         Vt.add("char");Vt.add("bool");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");
-        Vt.add("+");Vt.add("-");Vt.add("*");Vt.add("/");Vt.add("if");Vt.add("else");Vt.add(">");Vt.add("==");
+        Vt.add("+");Vt.add("-");Vt.add("*");Vt.add("/");Vt.add("if");Vt.add("else");Vt.add("while");Vt.add(">");Vt.add("==");
         Vt.add("end");Vt.add("<");Vt.add(">=");Vt.add("!=");Vt.add("<=");Vt.add("true");Vt.add("false");
 
         Vn.add("程序");
         Vn.add("函数主体");Vn.add("变量声明列表");Vn.add("变量声明");
         Vn.add("数据类型");Vn.add("语句列表");Vn.add("语句");Vn.add("赋值语句");Vn.add("基本表达式");
-        Vn.add("if_else语句");Vn.add("比较表达式");Vn.add("比较项");Vn.add("比较符号");
+        Vn.add("if_else语句");Vn.add("while语句");Vn.add("比较表达式");Vn.add("比较项");Vn.add("比较符号");
         Vn.add("算术表达式");Vn.add("算术表达式X");Vn.add("算术表达式T");Vn.add("算术表达式Y");Vn.add("算术表达式F");
         Vn.add("终结符I");
 
@@ -216,7 +220,7 @@ public class parser {//进行语法和语义的分析
             {
                 System.out.println("动作符号aa|"+sq.peek()+"|aa");
                 String[] temp=sq.peek().split("\\(|\\)");
-                if(temp[0].equals("ASSI")||temp[0].equals("IF")||temp[0].equals("EL")||temp[0].equals("IE"))
+                if(temp[0].equals("ASSI")||temp[0].equals("IF")||temp[0].equals("EL")||temp[0].equals("IE")||temp[0].equals("WH")||temp[0].equals("DO")||temp[0].equals("WE"))
                 {
                     quaternaryExpression.produceQE(sq.peek());
                     System.out.println(sq.peek());
@@ -274,16 +278,7 @@ public class parser {//进行语法和语义的分析
     }
 
     public static void main(String[] args) {
-        /*lexicalAnalyzer l = new lexicalAnalyzer();
-        fileParseUtils.txtParse();
-        l.CharToToken(fileParseUtils.charArr);
-        lexicalAnalyzer.showTokens();
-        quaternaryExpression qE=new quaternaryExpression();
-        qE.init();
 
-        parser.analyzer();
-
-        qE.show();*/
 
     }
 
