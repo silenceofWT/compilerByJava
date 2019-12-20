@@ -39,6 +39,8 @@ public class block {
                 inNum.add(i+1);
             }else if(Qt.get(0).get(i).equals("if")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
                 inNum.add(i + 2);
+            }else if(Qt.get(0).get(i).equals("wh")){//入口条件二 由条件语句或无条件语句能转到的语句 Qt.get(0).get(i)条件转移符号
+                inNum.add(i + 1);
             }else if(Qt.get(0).get(i).equals("ie")){
                 inNum.add(i+1);
             }else if(Qt.get(0).get(i).equals("we")){
