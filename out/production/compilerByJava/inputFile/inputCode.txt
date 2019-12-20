@@ -1,15 +1,13 @@
 program
 {
   int a;
-  bool b;
-  float c;
-  if(a==c+(3.5-2)/7)
-  {
-  b=true;
-  b=false;
-  }
-  else
-  {}
-  b=false;
+  a = 3;
+
+
+   while(a>=3){
+     a = a + 1;
+
+   }
+
 }
 end

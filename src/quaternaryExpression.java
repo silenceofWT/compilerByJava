@@ -20,7 +20,7 @@ public class quaternaryExpression {//生成四元式
     public static List<String> Qt_2=new ArrayList<String>();//四元式第三元
     public static List<String> Qt_3=new ArrayList<String>();//四元式第四元
     public static int Tn;
-    public static String QTFilePath = "C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
+    public static String QTFilePath = "F:\\javaProject\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
 
     public static void init()//public void init(List<String> ii,List<String> CC,List<String> SS,List<String> cc)
     {
@@ -78,6 +78,26 @@ public class quaternaryExpression {//生成四元式
             Qt_2.add("_");
             Qt_3.add("_");
         }
+        //while循环生成四元式
+        else if(command.equals("WH()")){
+            Qt_0.add("wh");
+            Qt_1.add("_");
+            Qt_2.add("_");
+            Qt_3.add("_");
+        }
+        else if(command.equals("DO(do)")){
+            Qt_0.add("do");
+            Qt_1.add(sem.peek());
+            sem.pop();
+            Qt_2.add("_");
+            Qt_3.add("_");
+        }
+        else if(command.equals("WE(we)")){
+            Qt_0.add("we");
+            Qt_1.add("_");
+            Qt_2.add("_");
+            Qt_3.add("_");
+        }
     }
 
     public static void show()
@@ -103,7 +123,7 @@ public class quaternaryExpression {//生成四元式
     }
     public static void main(String[] args)
     {
-       /* quaternaryExpression qE=new quaternaryExpression();
+        /*quaternaryExpression qE=new quaternaryExpression();
         qE.init();
         qE.produceQE("PUSH(a)");
         qE.produceQE("PUSH(b)");
