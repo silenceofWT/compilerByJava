@@ -20,7 +20,7 @@ public class quaternaryExpression {//生成四元式
     public static List<String> Qt_2=new ArrayList<String>();//四元式第三元
     public static List<String> Qt_3=new ArrayList<String>();//四元式第四元
     public static int Tn;
-    public static String QTFilePath = "F:\\javaProject\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
+    public static String QTFilePath = "C:\\Users\\Saber\\Desktop\\新建文件夹\\compilerByJava\\src\\outputFile\\quaternaryExp.txt";
 
     public static void init()//public void init(List<String> ii,List<String> CC,List<String> SS,List<String> cc)
     {
@@ -41,25 +41,104 @@ public class quaternaryExpression {//生成四元式
         if(splitcommand[0].equals("PUSH"))
         {
             sem.push(splitcommand[1]);
+            System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"+sem.peek());
         }
-        else if(command.equals("ASSI(=)"))
+        else if(command.equals("ASSI(=)"))//d=c
         {
+            String c,d;
             Qt_0.add("=");
             Qt_1.add(sem.peek());
+            System.out.println("ccccccccccccccccccccccccccccccccccc"+sem.peek());
+            c=sem.peek();
             sem.pop();
             Qt_2.add("_");
             Qt_3.add(sem.peek());
+            d=sem.peek();
             sem.pop();
+
+            int ctp=lexicalAnalyzer.isWhat_QE(c);
+            if(ctp==4)//c为标识符
+            {
+                if(parser.tb.checkType(d)!=parser.tb.checkType(c))//类型不同则报错
+                {
+                    System.out.println("等号两端类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
+            else
+            {
+                if(parser.tb.checkType(d)!=ctp)//类型不同则报错
+                {
+                    System.out.println("等号两端类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
         }
-        else if(splitcommand[0].equals("GEQ")||splitcommand[0].equals("COMP"))
+        else if(splitcommand[0].equals("GEQ")||splitcommand[0].equals("COMP"))//加减乘除和比较，bOPa
         {
+            String a,b;
             Qt_0.add(splitcommand[1]);
             Qt_2.add(sem.peek());
+            a=sem.peek();
             sem.pop();
             Qt_1.add(sem.peek());
+            b=sem.peek();
             sem.pop();
             Tn++;
             String temp="t"+Tn;
+
+            int atp=lexicalAnalyzer.isWhat_QE(a);
+            int btp=lexicalAnalyzer.isWhat_QE(b);
+            System.out.println(a+b+atp+"  feds "+btp+"  dsfsfds");
+            if((atp==4&&btp==4)||(atp==5&&btp==4)||(atp==4&&btp==5)||(atp==5&&btp==5))//同为标识符，查符号表
+            {
+                if(parser.tb.checkType(a)==parser.tb.checkType(b))//类型相同，则临时变量填符号表
+                {
+                    writeTable(temp,parser.tb.checkType(a));
+                }
+                else
+                {
+                    System.out.println("两标识符间类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
+            else if(atp==4||atp==5)//仅a为标识符时
+            {
+                if(parser.tb.checkType(a)==btp)//类型匹配
+                {
+                    writeTable(temp,parser.tb.checkType(a));
+                }
+                else
+                {
+                    System.out.println("标识符和另一运算对象类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
+            else if(btp==4||btp==5)//仅b为标识符时
+            {
+                if(parser.tb.checkType(b)==atp)//类型匹配
+                {
+                    writeTable(temp,parser.tb.checkType(b));
+                }
+                else
+                {
+                    System.out.println("标识符和另一非标识符运算对象类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
+            else//a、b均不为标识符
+            {
+                if(atp==btp)
+                {
+                    writeTable(temp,atp);
+                }
+                else
+                {
+                    System.out.println("两非标识符运算对象类型不匹配！请检查输入文件。");
+                    return;
+                }
+            }
+
             sem.push(temp);
             Qt_3.add(temp);
         }
@@ -102,12 +181,12 @@ public class quaternaryExpression {//生成四元式
 
     public static void show()
     {
-        for(int i=0;i<Qt.get(0).size();i++)
-        {
-            System.out.print("("+Qt.get(0).get(i)+" , ");
-            System.out.print(Qt.get(1).get(i)+" , ");
-            System.out.print(Qt.get(2).get(i)+" , ");
-            System.out.print(Qt.get(3).get(i)+")");
+        for(int i=0;i<Qt.get(0).size();i++) {
+
+            System.out.print(i + "(" + Qt.get(0).get(i) + " , ");
+            System.out.print(Qt.get(1).get(i) + " , ");
+            System.out.print(Qt.get(2).get(i) + " , ");
+            System.out.println(Qt.get(3).get(i) + ") ");
         }
     }
 
@@ -121,6 +200,20 @@ public class quaternaryExpression {//生成四元式
             fileParseUtils.saveAsFileWriter(qtStr,QTFilePath);
         }
     }
+
+    public static void writeTable(String name,int type)//填符号表
+    {
+        switch(type) {
+            case 0:parser.tb.lenl.add(parser.sizeofint);break;
+            case 1:parser.tb.lenl.add(parser.sizeoffloat);break;
+            case 2:parser.tb.lenl.add(parser.sizeofchar);break;
+            case 3:parser.tb.lenl.add(parser.sizeofbool);break;
+        }
+        table.iinfor iinfor_new=parser.tb.new iinfor(name,type,"v",parser.no_of_i);
+        parser.tb.synbl.add(iinfor_new);
+        parser.no_of_i++;
+    }
+
     public static void main(String[] args)
     {
         /*quaternaryExpression qE=new quaternaryExpression();

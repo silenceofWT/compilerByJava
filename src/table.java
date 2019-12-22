@@ -22,6 +22,7 @@ public class table {
         {
             System.out.println(name +"  "+type+"  "+cate+"  "+addr);
         }
+
     }
 
 
@@ -73,5 +74,15 @@ public class table {
         {
             System.out.println(lenl.get(i));
         }
+    }
+
+    public int checkType(String input)//查类型并返回
+    {
+        for(int i=0;i<synbl.size();i++)
+        {
+            if(input.equals(synbl.get(i).name))
+                return synbl.get(i).type;
+        }
+        return -1;
     }
 }

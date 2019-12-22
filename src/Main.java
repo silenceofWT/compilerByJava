@@ -10,6 +10,18 @@ public class Main {//主函数
         parser.analyzer();//语法分析
         parser.tb.show();
         quaternaryExpression.writeToTxt();//将四元式打印到txt
+        System.out.println("---------四元式--------");
         quaternaryExpression.show();//打印四元式
+
+        block.divideBlock(quaternaryExpression.Qt);
+        //System.out.println(block.inNum);
+        System.out.println("-----------------------");
+        System.out.println(block.inNum);
+        System.out.println(block.blockList);
+
+        //System.out.println("-------优化后四元式--------");
+        QEblock_optimization_by_DAG qeo=new QEblock_optimization_by_DAG();
+        qeo.init();
+        qeo.optimize();
     }
 }

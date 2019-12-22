@@ -9,10 +9,10 @@ public class lexicalAnalyzer {//词法分析器
    public  String[] p = {"<=",">=","==","=","!=",">","<","&&","||",
         "+","-","*","/","{","}",
         ";","(",")",",","[","]"};//界符表
-   public List<String> i = new ArrayList<String>();// 变量名
-   public List<String> C = new ArrayList<String>();// 字符
-   public List<String> S = new ArrayList<String>();// 字符串
-   public List<String> c = new ArrayList<String>();// 数字
+   public static List<String> i = new ArrayList<String>();// 标识符
+   public static List<String> C = new ArrayList<String>();// 字符
+   public static List<String> S = new ArrayList<String>();// 字符串
+   public static List<String> c = new ArrayList<String>();// 数字
    public static List<String> Tokens = new ArrayList<>();//Token序列
    public static List<String> TokenType = new ArrayList<>();//Token序列类型
    public static List<Integer> TokenNum = new ArrayList<>();//Token序列标号
@@ -145,7 +145,7 @@ public class lexicalAnalyzer {//词法分析器
             }
             else if(ch ==  '\''){
                 //字符
-            while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\'')) {//加入token序列
+            /*while ((ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch == '\'')) {//加入token序列
             strToken.append(ch);
             i += 1;
                 if(i==text.size())
@@ -153,9 +153,25 @@ public class lexicalAnalyzer {//词法分析器
                     break;
                 }
             ch = text.get(i).charAt(0);
-        }
+        }*/
+            strToken.append(ch);
+            i++;
+                if(i==text.size()) break;
+            ch = text.get(i).charAt(0);
+            strToken.append(ch);
+            i++;
+                if(i==text.size()) break;
+            ch = text.get(i).charAt(0);
+            i++;
+                if(i==text.size()) break;
+            if(ch!='\'')
+            {
+                System.out.println("单引号内只允许输入一个字符！！");
+                break;
+            }
+                strToken.append(ch);
         if (this.C.size() == 0) {//如果标识符表为空且tag为0
-            Tokens.add(CommonUtils.filterChar(strToken.toString()));
+            Tokens.add(strToken.toString());
             TokenType.add("字符");
             TokenNum.add((1));
             this.C.add(strToken.toString());
@@ -167,7 +183,7 @@ public class lexicalAnalyzer {//词法分析器
             for (int t = 0; t < this.C.size(); t++) {
 
                 if (this.C.get(t).equals(strToken.toString()) && tag == 0) {
-                    Tokens.add(CommonUtils.filterChar(strToken.toString()));
+                    Tokens.add(strToken.toString());
                     TokenType.add("字符");
                     TokenNum.add((t+1));
                     tag = 1;
@@ -176,7 +192,7 @@ public class lexicalAnalyzer {//词法分析器
                     break;
                 }
                 else {
-                    Tokens.add(CommonUtils.filterChar(strToken.toString()));
+                    Tokens.add(strToken.toString());
                    this.C.add(strToken.toString());
                     tag = 1;
                     int put = this.C.size() - 1;
@@ -287,6 +303,40 @@ public class lexicalAnalyzer {//词法分析器
             System.out.println(lexicalAnalyzer.TokenType.get(i));
             System.out.println("-----------------");
         }
+    }
+
+    public static int isWhat_QE(String input)//输入为四元式的第2或3或4项，判断其类型，返回值：4为标识符，2为字符，0为整型常数，1为浮点型常数,3为true/false,5为临时变量
+    {
+        if(input.equals("true")||input.equals("false"))
+            return 3;
+        for(int ii=0;ii<i.size();ii++)
+        {
+            if(i.get(ii).equals(input))
+                return 4;
+        }
+        for(int ii=0;ii<parser.tb.synbl.size();ii++)
+        {
+            if(parser.tb.synbl.get(ii).name.equals(input))
+                return 5;
+        }
+        for(int j=0;j<C.size();j++)
+        {
+            if(C.get(j).equals(input))
+                return 2;
+        }
+        String[] temp=input.split("");
+        for(int j=0;j<temp.length;j++)
+        {
+            if(temp[j].equals("0")||temp[j].equals("1")||temp[j].equals("2")
+            ||temp[j].equals("3")||temp[j].equals("4")||temp[j].equals("5")
+            ||temp[j].equals("6")||temp[j].equals("7")||temp[j].equals("8")|temp[j].equals("9"))
+                continue;
+            else if(temp[j].equals("."))
+                return 1;
+            else
+                return -1;
+        }
+        return 0;
     }
 
 
