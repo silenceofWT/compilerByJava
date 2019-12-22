@@ -9,9 +9,15 @@
 2. quaternaryExp.txt 会输出四元式序列
 CommonUtils.java 存放所有类用到的公共组件或工具
 Main.java 运行的主函数
+
 block.java 基本块划分类
+
 fileParseUtils.java 文件解析工具类
+
 lexicalAnalyzer.java 词法分析类
+
 parser.java 语法分析类
+
 quaternaryExpression.java 四元式生成类
+
 table.java 符号表类
