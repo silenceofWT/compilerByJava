@@ -11,6 +11,8 @@ public class parser {//进行语法和语义的分析
     public static final int sizeoffloat = 2;
     public static final int sizeofchar = 4;
     public static final int sizeofbool = 1;
+    public static int no_of_i=0;//记录符号表中填入的符号数
+
 
     public static void iniTable()
     {
@@ -121,7 +123,6 @@ public class parser {//进行语法和语义的分析
         iniTable();
         int tag = 0;
 
-        int no_of_i=0;//记录符号表中填入的符号数
         int type=-1;//暂存待填符号type
         boolean flag_addi=false;//标示是否需要填符号表
 

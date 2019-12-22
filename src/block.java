@@ -54,10 +54,13 @@ public class block {
         for(int i = 0;i < inNum.size();i++){
             List<Integer> aBlock = new ArrayList<>();//一个基本块属性
             if(i < inNum.size() -1){
-                aBlock.add(inNum.get(i));
-                aBlock.add(inNum.get(i+1)-1);
-                blockList.add(aBlock);
-                System.out.println(aBlock);
+                if(inNum.get(i)!=inNum.get(i+1)) {
+                    aBlock.add(inNum.get(i));
+                    aBlock.add(inNum.get(i+1)-1);
+                    blockList.add(aBlock);
+                    System.out.println(aBlock);
+                }
+
             }else if(i == inNum.size() - 1){
                 aBlock.add(inNum.get(i));
                 aBlock.add(inNum.get(i));
@@ -67,6 +70,15 @@ public class block {
             aBlock = null;
         }
 
+        if(blockList.size()==1)
+        {
+            List<Integer> aBlock = new ArrayList<>();//一个基本块属性
+            aBlock.add(0);
+            aBlock.add(quaternaryExpression.Qt_0.size()-1);
+            blockList.clear();
+            blockList.add(aBlock);
+
+        }
     }
 
     public static void main(String[] args) {
@@ -81,6 +93,7 @@ public class block {
         quaternaryExpression.show();//显示生成的四元式
         quaternaryExpression.writeToTxt();//将生成的四元式写入txt
         block.divideBlock(quaternaryExpression.Qt);
+        System.out.println("-----------------------");
         System.out.println(block.inNum);
         System.out.println(block.blockList);
     }

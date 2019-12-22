@@ -2,26 +2,24 @@ program
 {
   int a;
   int b;
-  bool c;
-  a = 3 + 2;
-  a = 6;
-
-  b = 4;
-
-
-
-while(a==1){
-     if(b >= 3)
-     {
-        c = false;
-     }else{
-       a = a + 1;
-       b = b + 2;
-     }
-
-}
+  float c;
+  a=2+1;
+  b=a+3;
+  a=a+1
 
 
 
+while(a<b)
+{
+  if(a<b)
+  {
+  a=2;
+  b=a+4;
+  }
+  else
+  {
+
+  }
+  }
 }
 end
