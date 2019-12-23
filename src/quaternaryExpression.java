@@ -41,14 +41,12 @@ public class quaternaryExpression {//生成四元式
         if(splitcommand[0].equals("PUSH"))
         {
             sem.push(splitcommand[1]);
-            System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"+sem.peek());
         }
         else if(command.equals("ASSI(=)"))//d=c
         {
             String c,d;
             Qt_0.add("=");
             Qt_1.add(sem.peek());
-            System.out.println("ccccccccccccccccccccccccccccccccccc"+sem.peek());
             c=sem.peek();
             sem.pop();
             Qt_2.add("_");
@@ -57,7 +55,7 @@ public class quaternaryExpression {//生成四元式
             sem.pop();
 
             int ctp=lexicalAnalyzer.isWhat_QE(c);
-            if(ctp==4)//c为标识符
+            if(ctp==4||ctp==5)//c为标识符或临时变量
             {
                 if(parser.tb.checkType(d)!=parser.tb.checkType(c))//类型不同则报错
                 {
@@ -89,7 +87,6 @@ public class quaternaryExpression {//生成四元式
 
             int atp=lexicalAnalyzer.isWhat_QE(a);
             int btp=lexicalAnalyzer.isWhat_QE(b);
-            System.out.println(a+b+atp+"  feds "+btp+"  dsfsfds");
             if((atp==4&&btp==4)||(atp==5&&btp==4)||(atp==4&&btp==5)||(atp==5&&btp==5))//同为标识符，查符号表
             {
                 if(parser.tb.checkType(a)==parser.tb.checkType(b))//类型相同，则临时变量填符号表

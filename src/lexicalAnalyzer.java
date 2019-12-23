@@ -309,21 +309,15 @@ public class lexicalAnalyzer {//词法分析器
     {
         if(input.equals("true")||input.equals("false"))
             return 3;
-        for(int ii=0;ii<i.size();ii++)
-        {
-            if(i.get(ii).equals(input))
-                return 4;
-        }
+        if(i.contains(input))
+            return 4;
         for(int ii=0;ii<parser.tb.synbl.size();ii++)
         {
             if(parser.tb.synbl.get(ii).name.equals(input))
                 return 5;
         }
-        for(int j=0;j<C.size();j++)
-        {
-            if(C.get(j).equals(input))
-                return 2;
-        }
+        if(C.contains(input))
+            return 2;
         String[] temp=input.split("");
         for(int j=0;j<temp.length;j++)
         {

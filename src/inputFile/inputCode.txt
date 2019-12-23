@@ -6,20 +6,20 @@ program
   a=2+1;
   b=a+3;
   a=a+1;
-
-
+  c=3.14+1.11;
 
 while(a<b)
 {
-  if(a<b)
-  {
-  a=2;
-  b=a+4;
-  }
-  else
-  {
+  if(a<=b)
+    {
+    a=2;
+    b=a+4;
+    }
+    else
+    {
 
+    }
   }
-  }
+  a=0;
 }
 end

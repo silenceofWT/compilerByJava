@@ -51,6 +51,7 @@ public class block {
                 inNum.add(i+1);
             }
         }
+        inNum.add(quaternaryExpression.Qt_0.size());
         for(int i = 0;i < inNum.size();i++){
             List<Integer> aBlock = new ArrayList<>();//一个基本块属性
             if(i < inNum.size() -1){
@@ -61,24 +62,10 @@ public class block {
                     System.out.println(aBlock);
                 }
 
-            }else if(i == inNum.size() - 1){
-                aBlock.add(inNum.get(i));
-                aBlock.add(inNum.get(i));
-                blockList.add(aBlock);
-                System.out.println(aBlock);
             }
             aBlock = null;
         }
 
-        if(blockList.size()==1)
-        {
-            List<Integer> aBlock = new ArrayList<>();//一个基本块属性
-            aBlock.add(0);
-            aBlock.add(quaternaryExpression.Qt_0.size()-1);
-            blockList.clear();
-            blockList.add(aBlock);
-
-        }
     }
 
     public static void main(String[] args) {
