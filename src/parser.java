@@ -99,8 +99,9 @@ public class parser {//进行语法和语义的分析
         table.put("终结符I",terminalI);
 
         System.out.println();
-        System.out.println(" Map Elements");
-        System.out.println("\t" + table);
+        System.out.println(" 语法分析：");
+        //System.out.println(" Map Elements");
+        //System.out.println("\t" + table);
 
         Vt.add("标识符");Vt.add("常数");Vt.add("字符");Vt.add("program");Vt.add("int");Vt.add("float");
         Vt.add("char");Vt.add("bool");Vt.add("(");Vt.add(")");Vt.add("{");Vt.add("}");Vt.add("=");Vt.add(";");
@@ -136,7 +137,7 @@ public class parser {//进行语法和语义的分析
 
             else if(b.equals("标识符")&&flag_addi)//若为标识符，则看是否需要填符号表
             {
-                System.out.println("填符号表");
+                //System.out.println("填符号表");
                 table.iinfor iinfor_new=tb.new iinfor(lexicalAnalyzer.Tokens.get(tag),type,"v",no_of_i);
                 tb.synbl.add(iinfor_new);
                 no_of_i++;
@@ -150,14 +151,14 @@ public class parser {//进行语法和语义的分析
                 {
                     if(table.get(a).get(b)==null)
                     {
-                        System.out.println(a+b);
+                        System.out.print(a+b);
                         System.out.println("没有可以匹配的规则，不能识别！出错！");
                         return ;
                     }
-                    System.out.println(sq.peek()+"出栈");
-                    System.out.println(b+" input");
+                   // System.out.println(sq.peek()+"出栈");
+                   // System.out.println(b+" input");
                     sq.pop();
-                    System.out.println(table.get(a).get(b));
+                    //System.out.println(table.get(a).get(b));
                     String[] temp=table.get(a).get(b).split("#|\\[|]" );
 
                     //填符号表相关操作
@@ -191,7 +192,7 @@ public class parser {//进行语法和语义的分析
                     {
                         if(temp[t].length()!=0)
                         {
-                            System.out.println(temp[t]+" 入栈");
+                            //System.out.println(temp[t]+" 入栈");
                             sq.push(temp[t]);
                         }
                     }
@@ -219,7 +220,7 @@ public class parser {//进行语法和语义的分析
             }
             else//动作符号
             {
-                System.out.println("动作符号aa|"+sq.peek()+"|aa");
+                //System.out.println("动作符号|"+sq.peek()+"|");
                 String[] temp=sq.peek().split("\\(|\\)");
                 if(temp[0].equals("ASSI")||temp[0].equals("IF")||temp[0].equals("EL")||temp[0].equals("IE")||temp[0].equals("WH")||temp[0].equals("DO")||temp[0].equals("WE"))
                 {
@@ -263,6 +264,7 @@ public class parser {//进行语法和语义的分析
             }
         }
         System.out.println("匹配成功");
+        System.out.println("------------------------------");
     }
 
     public static List<String> change(String token_in)//拆开token
